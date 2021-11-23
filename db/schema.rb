@@ -10,10 +10,74 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_23_093404) do
+ActiveRecord::Schema.define(version: 2021_11_23_130838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "buddy_pairs", force: :cascade do |t|
+    t.bigint "first_student_id"
+    t.bigint "second_student_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "daily_challenge_id", null: false
+    t.index ["daily_challenge_id"], name: "index_buddy_pairs_on_daily_challenge_id"
+    t.index ["first_student_id"], name: "index_buddy_pairs_on_first_student_id"
+    t.index ["second_student_id"], name: "index_buddy_pairs_on_second_student_id"
+  end
+
+  create_table "daily_challenges", force: :cascade do |t|
+    t.integer "position"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "daily_results", force: :cascade do |t|
+    t.integer "score"
+    t.bigint "daily_challenge_id", null: false
+    t.bigint "game_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["daily_challenge_id"], name: "index_daily_results_on_daily_challenge_id"
+    t.index ["game_id"], name: "index_daily_results_on_game_id"
+  end
+
+  create_table "exercises", force: :cascade do |t|
+    t.integer "success_probability"
+    t.integer "position"
+    t.bigint "daily_challenge_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["daily_challenge_id"], name: "index_exercises_on_daily_challenge_id"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "daily_challenge_id", null: false
+    t.integer "score"
+    t.integer "current_hour"
+    t.boolean "is_over", default: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["daily_challenge_id"], name: "index_games_on_daily_challenge_id"
+    t.index ["user_id"], name: "index_games_on_user_id"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "name"
+    t.integer "lives", default: 3
+    t.bigint "exercise_id", null: false
+    t.bigint "game_id", null: false
+    t.integer "success_probability"
+    t.integer "classroom_position"
+    t.boolean "teacher_help", default: false
+    t.boolean "is_helped", default: false
+    t.boolean "can_help", default: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["exercise_id"], name: "index_students_on_exercise_id"
+    t.index ["game_id"], name: "index_students_on_game_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +87,19 @@ ActiveRecord::Schema.define(version: 2021_11_23_093404) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "buddy_pairs", "daily_challenges"
+  add_foreign_key "buddy_pairs", "students", column: "first_student_id"
+  add_foreign_key "buddy_pairs", "students", column: "second_student_id"
+  add_foreign_key "daily_results", "daily_challenges"
+  add_foreign_key "daily_results", "games"
+  add_foreign_key "exercises", "daily_challenges"
+  add_foreign_key "games", "daily_challenges"
+  add_foreign_key "games", "users"
+  add_foreign_key "students", "exercises"
+  add_foreign_key "students", "games"
 end
