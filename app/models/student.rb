@@ -6,4 +6,9 @@ class Student < ApplicationRecord
   validates :lives, inclusion: { in: 0..3 }
   def current_buddy
   end
+
+  def help_buddy
+    self.is_helped = true
+    self.can_help = false
+  end
 end
