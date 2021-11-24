@@ -6,7 +6,7 @@ class Student < ApplicationRecord
   validates :lives, inclusion: { in: 0..3 }
   def current_buddy
     student = self
-    buddies = BuddyPair.where(first_student: student) || BuddyPair.where(second_student: student)
+    buddies = BuddyPair.find_by(first_student: student) || BuddyPair.find_by(second_student: student)
     buddies.first_student == student ? current_buddy = buddies.second_student : current_buddy = buddies.first_student
     return current_buddy
   end
@@ -15,6 +15,7 @@ class Student < ApplicationRecord
     student = self
     reset_help(student)
     update_exercise(student)
+    student.save
   end
 
   def daily_update
@@ -23,6 +24,7 @@ class Student < ApplicationRecord
     student.exercise = student.game.daily_challenge.exercises.first
     student.success_probability = student.exercise.success_probability
     reset_help(student)
+    student.save
   end
 
   private
@@ -35,13 +37,14 @@ class Student < ApplicationRecord
 
   def update_exercise(student)
     god_number = rand(1..100)
-    if god_number <= student.success_probability
+    if god_number <= student.success_probability && student.exercise.position <= 6
       new_position_exercise = student.exercise.position + 1
-      next_exercise = Exercise.where(position: new_position_exercise)
+      next_exercise = student.game.daily_challenge.exercises.find_by(position: new_position_exercise)
       student.exercise = next_exercise
-      student.success_probability = next_exercise.success_probability
+      student.success_probability = student.exercise.success_probability
     else
       student.success_probability += 5
+      # ajouter si position exercice actuel = 6
     end
   end
 end

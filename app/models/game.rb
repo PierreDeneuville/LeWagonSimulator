@@ -10,13 +10,15 @@ class Game < ApplicationRecord
   def hour_update
     game = self
     game.current_hour += 1
+    game.save
   end
 
   def daily_update
     game = self
     game.current_hour = 9
     new_position = game.daily_challenge.position + 1
-    new_daily_challenge = DailyChallenge.where(position: new_position)
+    new_daily_challenge = DailyChallenge.find_by(position: new_position)
     game.daily_challenge = new_daily_challenge
+    game.save
   end
 end
