@@ -7,8 +7,4 @@ class Student < ApplicationRecord
   def current_buddy
   end
 
-  def help_buddy
-    self.is_helped = true
-    self.can_help = false
-  end
 end

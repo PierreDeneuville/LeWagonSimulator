@@ -1,0 +1,2 @@
+<%= link_to "teacher help", game_student_path(@game, @game.students.first, {help: 'teacher'}), method: :patch %>
+<%= link_to "help buddy", game_student_path(@game, @game.students.last, {help: 'student'}), method: :patch %>
