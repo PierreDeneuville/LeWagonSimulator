@@ -47,4 +47,5 @@ class Student < ApplicationRecord
       # ajouter si position exercice actuel = 6
     end
   end
+
 end
