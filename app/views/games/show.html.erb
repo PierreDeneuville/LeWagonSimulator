@@ -1,16 +1,26 @@
 <h1>show_view</h1>
-<%= link_to "teacher help", game_student_path(@game, @game.students.first, {help: 'teacher'}), method: :patch %>
-<br>
-<%= link_to "help buddy", game_student_path(@game, @game.students.last, {help: 'student'}), method: :patch %>
-<br>
-<%= link_to '+1H', game_path(@game), method: :patch %>
+<div class="button-help">
+</div>
+
+<%= link_to '+1H', game_path(@game), method: :patch, class: "btn btn-primary" %>
 <br>
 <%= @game.current_hour %>H &nbsp;<%= @game.daily_challenge.position  %>jours
 <br>
-<% @game.students.order(:classroom_position).each do |student| %>
-  <%= student.name.capitalize %> &nbsp;
-  <%= student.exercise.position %> EXO &nbsp;
-  <%= student.success_probability %>% &nbsp;
-  <%= student.lives %>VIES &nbsp;
-  <br>
-<% end %>
+
+
+<div class="container-show-games" style= "display:grid; grid-template-columns: 1fr 1fr 1fr 1fr; grid-gap: 26px; margin-top: 16px; ">
+  <% @game.students.order(:classroom_position).each do |student| %>
+    <%= link_to do %>
+      <div class="card" style="width: 18rem;" data-student-id=<%= student.id %> data-game-id=<%= @game.id %>>
+        <div class="card-body">
+          <h5 class="card-title"><%= student.name %></h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><%= student.lives %> Vies</li>
+          <li class="list-group-item"><%= student.success_probability %>%</li>
+          <li class="list-group-item">Exercice: <%= student.exercise.position %></li>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+</div>
