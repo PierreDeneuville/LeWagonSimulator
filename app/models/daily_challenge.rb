@@ -6,4 +6,5 @@ class DailyChallenge < ApplicationRecord
   validates :position, presence: true
   validates :position, numericality: { only_integer: true }
   validates :position, inclusion: { in: 1..20 }
+
 end

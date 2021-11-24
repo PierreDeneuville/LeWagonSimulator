@@ -21,6 +21,15 @@ class Student < ApplicationRecord
   def daily_update
     student = self
     student.lives -= 1 if student.exercise.position <= 3
+
+    # calcul du score
+    # lives = student.lives
+    # current_exercise = student.exercise.position
+    # student_score = lives * current_exercise
+    # raise
+    # student.game.daily_results.score += student_score
+
+
     student.exercise = student.game.daily_challenge.exercises.first
     student.success_probability = student.exercise.success_probability
     reset_help(student)
@@ -37,7 +46,20 @@ class Student < ApplicationRecord
 
   def update_exercise(student)
     god_number = rand(1..100)
-    if god_number <= student.success_probability && student.exercise.position <= 6
+    daily_result = student.game.daily_challenge.daily_result
+    if god_number <= student.success_probability && student.exercise.position == 6
+      # new_position_exercise = student.exercise.position + 1
+      # next_exercise = student.game.daily_challenge.exercises.find_by(position: new_position_exercise)
+      # student.exercise = next_exercise
+      # student.success_probability = student.exercise.success_probability
+      daily_result.score += student.lives * (student.exercise.position + 1)
+      daily_result.save
+
+
+
+    elsif god_number <= student.success_probability && student.exercise.position < 6
+      daily_result.score += student.lives
+      daily_result.save
       new_position_exercise = student.exercise.position + 1
       next_exercise = student.game.daily_challenge.exercises.find_by(position: new_position_exercise)
       student.exercise = next_exercise
