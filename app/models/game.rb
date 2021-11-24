@@ -6,7 +6,17 @@ class Game < ApplicationRecord
 
   validates :current_hour, numericality: { only_integer: true }
   validates :current_hour, inclusion: { in: 9..18 }
-  after_create :create_students
+  after_create :create_students, :create_daily_results
+
+  def create_daily_results
+    game = self
+    position = 1
+    20.times do
+      daily_challenge = DailyChallenge.find_by(position: position)
+      DailyResult.create(daily_challenge: daily_challenge, game: game, score: 0)
+      position += 1
+    end
+  end
 
  STUDENTS_NAME = ["ced", "fred", "julien", "julia", "shimon", "pierre", "christopher", "nathan", "nadia", "suzette", "romain", "buffy", "jeremy", "moussa", "melanie", "claudine"]
 
@@ -56,5 +66,4 @@ class Game < ApplicationRecord
       count += 1
     end
   end
-
 end

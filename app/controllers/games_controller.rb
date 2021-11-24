@@ -20,15 +20,19 @@ class GamesController < ApplicationController
     if @game.current_hour < 18
       @game.hour_update
       students.each(&:hour_update)
+      @game.save
+      redirect_to game_path(@game)
     elsif @game.current_hour == 18 && @game.daily_challenge.position != 20
+      @daily_results = @game.daily_challenge.daily_result
       @game.daily_update
       students.each(&:daily_update)
+      @game.save
+      redirect_to game_daily_result_path(@daily_results)
     else
       # TODO : score total
       @game.is_over = true
+      @game.save
       redirect_to games_path
     end
-    @game.save
-    redirect_to game_path(@game)
   end
 end
