@@ -3,6 +3,7 @@ Exercise.delete_all
 puts "Cleaning all daily challenges"
 DailyChallenge.delete_all
 
+
 puts "creating 20 daily challenges"
 
 counter = 0
