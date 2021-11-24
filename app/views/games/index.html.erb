@@ -1,24 +1,4 @@
 <h1>Games INdex View</h1>
-  <%= @games %>
-  <ul>
-    <% @games.each do |game| %>
-      <li><%= game.score %></li>
-    <% end %>
-  </ul>
 
-<div>
-  <% user_games = Game.where(user: current_user) %>
-  <% raise %>
-  <% if user_games.nil? || user_games.last.is_over %>
-    <%= link_to "PLAY", "create_path", class: "btn btn-primary" %>
-  <% else %>
-    <%= link_to "PLAY", "game_path", class: "btn btn-primary" %>
-  <% end %>
-</div>
 
-<%# user_games = Game.where(user: current_user)
-  if user_games.nil? || user_games.last.is_over? = true
-    POST create game
-  else
-    Show last game current_user
- end %>
+  <%= link_to "PLAY", games_path, method: :post, class: "btn btn-danger" %>
