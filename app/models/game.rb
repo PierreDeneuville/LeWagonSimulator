@@ -24,7 +24,6 @@ class Game < ApplicationRecord
   def create_buddies(students)
     count = 1
     8.times do
-
       student1 = students.sample
       students.delete(student1)
 
@@ -41,7 +40,5 @@ class Game < ApplicationRecord
       student2.save
       count += 1
     end
-
   end
-
 end
