@@ -29,6 +29,6 @@ class GamesController < ApplicationController
       redirect_to games_path
     end
     @game.save
-    redirect_to root_path
+    redirect_to game_path(@game)
   end
 end
