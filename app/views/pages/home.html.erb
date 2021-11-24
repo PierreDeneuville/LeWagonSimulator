@@ -7,5 +7,9 @@
 <%= student.name %>
   <%= student.exercise.position %>
   <%= student.success_probability %>
+  <%= student.game.daily_challenge.position %>pos
+
 
 <% end %>
+
+  <h1><%= Game.first.daily_challenge.position %> pos</h1>
