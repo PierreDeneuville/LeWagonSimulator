@@ -44,6 +44,10 @@ class Student < ApplicationRecord
       student.success_probability = student.exercise.success_probability
     else
       student.success_probability += 5
+      if student.success_probability < student.exercise.success_probability
+        student.success_probability = student.exercise.success_probability
+        student.save
+      end
       # ajouter si position exercice actuel = 6
     end
   end

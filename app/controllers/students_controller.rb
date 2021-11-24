@@ -8,13 +8,13 @@ class StudentsController < ApplicationController
     if params['help'] == 'teacher'
       @student.teacher_help = true
       @student.success_probability += 40
-    else 
+    else
       @student.success_probability += 20
       helping_student.success_probability = 0
     end
     @student.save
     helping_student.save
-    redirect_to show_path(@show)
+    @game = @student.game
+    redirect_to game_path(@game)
   end
 end
-

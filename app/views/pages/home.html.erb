@@ -1,15 +1,5 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
-<%= link_to '+1H', game_path(Game.first), method: :patch %>
-<%= Game.first.current_hour %>
-<% Game.first.students.each do |student| %>
-<%= student.name %>
-  <%= student.exercise.position %>
-  <%= student.success_probability %>
-  <%= student.game.daily_challenge.position %>pos
 
-
-<% end %>
-
-  <h1><%= Game.first.daily_challenge.position %> pos</h1>
+<%= link_to "PLAY", games_path, method: :post, class: "btn btn-danger" %>
