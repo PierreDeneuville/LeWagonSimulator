@@ -1,0 +1,12 @@
+<h2>Fin de partie</h2>
+<h3>Score final: <%= @game.score %> pts</h3>
+<h3>Votre rang: <%= @game.player_rank %></h3>
+<h3>Gestion des vies:<%= @game.lives_lost %></h3>
+
+
+<h3>Votre progression dans le jeu: </h3>
+<% @daily_results.order(:id).each do |result| %>
+  <%= result.score %>
+<% end %>
+
+<%= link_to 'Voir mon classement', root_path %>
