@@ -1,8 +1,5 @@
 class DailyResultsController < ApplicationController
-
-
-def show
-  @daily_result = DailyResult.find(params[:id])
-end
-
+  def show
+    @daily_result = DailyResult.find(params[:id])
+  end
 end
