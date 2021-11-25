@@ -1,9 +1,12 @@
 <h1>show_view</h1>
 
-<div class="button-help">
-</div>
-
-<%= link_to '+1H', game_path(@game), method: :patch, class: "btn btn-primary" %>
+  <div class="button-help">
+  </div>
+<% if @game.current_hour < 18 %>
+  <%= link_to '+1H', game_path(@game), method: :patch, class: "btn btn-primary" %>
+<% else %>
+  <%= link_to 'Fin de journée', game_path(@game), method: :patch, class: "btn btn-primary" %>
+<% end %>
 <br>
 <%= @game.current_hour %>H &nbsp;<%= @game.daily_challenge.position  %>jours
 <br>
@@ -14,7 +17,7 @@
 <div class="container-show-games" style= "display:grid; grid-template-columns: 1fr 1fr 1fr 1fr; grid-gap: 26px; margin-top: 16px; ">
   <% @game.students.order(:classroom_position).each do |student| %>
     <%= link_to do %>
-      <div class="card" style="width: 18rem;" data-student-id=<%= student.id %> data-game-id=<%= @game.id %>>
+      <div class="card" style="width: 18rem;" data-can-help=<%= student.can_help? %> data-is-helped=<%= student.is_helped  %> data-student-id=<%= student.id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>>
         <div class="card-body">
           <h5 class="card-title"><%= student.name %></h5>
         </div>
