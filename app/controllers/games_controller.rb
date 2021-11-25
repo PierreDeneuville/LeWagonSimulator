@@ -17,22 +17,40 @@ class GamesController < ApplicationController
   def update
     @game = Game.find(params[:id])
     students = @game.students
-    if @game.current_hour < 18
-      @game.hour_update
-      students.each(&:hour_update)
-      @game.save
-      redirect_to game_path(@game)
-    elsif @game.current_hour == 18 && @game.daily_challenge.position != 20
-      @daily_results = @game.daily_challenge.daily_result
-      @game.daily_update
-      students.each(&:daily_update)
-      @game.save
-      redirect_to game_daily_result_path(@daily_results)
+    @daily_results = @game.daily_challenge.daily_result
+    if params['help'] == 'skip'
+      @game.skip_day
+      redirect_to game_daily_result_path(@game, @daily_results)
     else
-      # TODO : score total
-      @game.is_over = true
-      @game.save
-      redirect_to games_path
+      if @game.current_hour < 18
+        next_hour(@game, students)
+        redirect_to game_path(@game)
+      elsif @game.current_hour == 18 && @game.daily_challenge.position != 20
+        next_day(@game, students)
+        redirect_to game_daily_result_path(@game, @daily_results)
+      else
+        finish_game(@game)
+        redirect_to games_path
+      end
     end
+  end
+
+  private
+
+  def next_hour(game, students)
+    game.hour_update
+    students.each(&:hour_update)
+    game.save
+  end
+
+  def next_day(game, students)
+    game.daily_update
+    students.each(&:daily_update)
+    game.save
+  end
+
+  def finish_game(game)
+    game.is_over = true
+    game.save
   end
 end

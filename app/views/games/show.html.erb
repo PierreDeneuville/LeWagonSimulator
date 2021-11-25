@@ -1,4 +1,5 @@
 <h1>show_view</h1>
+
 <div class="button-help">
 </div>
 
@@ -6,6 +7,8 @@
 <br>
 <%= @game.current_hour %>H &nbsp;<%= @game.daily_challenge.position  %>jours
 <br>
+
+<%= link_to "Skip Day", game_path(@game, {help: 'skip'}), method: :patch %>
 
 
 <div class="container-show-games" style= "display:grid; grid-template-columns: 1fr 1fr 1fr 1fr; grid-gap: 26px; margin-top: 16px; ">
