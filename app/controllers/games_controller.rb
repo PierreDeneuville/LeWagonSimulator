@@ -27,7 +27,7 @@ class GamesController < ApplicationController
       @game.daily_update
       students.each(&:daily_update)
       @game.save
-      redirect_to game_daily_result_path(@daily_results)
+      redirect_to game_daily_result_path(params: [@games, @daily_results])
     else
       # TODO : score total
       @game.is_over = true
