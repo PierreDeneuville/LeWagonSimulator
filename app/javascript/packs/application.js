@@ -24,12 +24,12 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import { help_student } from '../components/button_student'
+import { helpStudent } from '../components/button_student'
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  help_student();
+  helpStudent();
 });
