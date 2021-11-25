@@ -29,6 +29,20 @@ class Game < ApplicationRecord
     create_buddies(students)
   end
 
+  def skip_day
+    game = self
+    students = game.students
+    hours_left = 18 - game.current_hour
+    hours_left.times do
+      game.hour_update
+      students.each(&:hour_update)
+      game.save
+    end
+    game.daily_update
+    students.each(&:daily_update)
+    game.save
+  end
+
   def hour_update
     game = self
     game.current_hour += 1
