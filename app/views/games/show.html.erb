@@ -11,7 +11,8 @@
 <%= @game.current_hour %>H &nbsp;<%= @game.daily_challenge.position  %>jours
 <br>
 
-<% @teacher = @game.students.find_by(teacher_help: true) %>
+<%= link_to "Skip Day", game_path(@game, {help: 'skip'}), method: :patch %>
+
 
 <div class="container-show-games" style= "display:grid; grid-template-columns: 1fr 1fr 1fr 1fr; grid-gap: 26px; margin-top: 16px; ">
   <% @game.students.order(:classroom_position).each do |student| %>
