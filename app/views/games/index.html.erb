@@ -1,5 +1,4 @@
 <h1>Games INdex View</h1>
-
 <% current_game = current_user.games.find_by(is_over: false) %>
   <% if current_user.games.empty? || current_game.nil? %>
     <%= link_to "PLAY", games_path, method: :post, class: "btn btn-danger" %>

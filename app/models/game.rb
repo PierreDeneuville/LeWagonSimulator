@@ -18,13 +18,13 @@ class Game < ApplicationRecord
     end
   end
 
- STUDENTS_NAME = ["ced", "fred", "julien", "julia", "shimon", "pierre", "christopher", "nathan", "nadia", "suzette", "romain", "buffy", "jeremy", "moussa", "melanie", "claudine"]
+ STUDENTS_NAME = ["ced", "fred", "julien", "julia", "shimon", "pierre", "christopher", "nathan", "nadia", "suzette", "romain", "buffy"]
 
   def create_students
     exercise = DailyChallenge.first.exercises.first
     students = []
     STUDENTS_NAME.each do |name|
-      students << Student.create!(name: name, lives: 3, exercise: exercise, success_probability: exercise.success_probability, game: self )
+      students << Student.create!(name: name.capitalize, lives: 3, exercise: exercise, success_probability: exercise.success_probability, game: self )
     end
     create_buddies(students)
   end
@@ -58,11 +58,53 @@ class Game < ApplicationRecord
     game.save
   end
 
+  def player_rank
+    final_score = score
+    case final_score
+    when 0
+      "On ne peux plus rien pour toi"
+    when 1..300
+      "Tu ne t'es pas foulé"
+    when 301..500
+      "Pas mal, mais pas top non plus"
+    when 501..1000
+      "Petit bras, petit chocolats"
+    when 1001..5000
+      "Bien joué"
+    when 5001..10_000
+      "Bonhomme!"
+    when 10_001..50_000
+      "Seb"
+    else
+      "Ce score est douteux, tu as triché :p"
+    end
+  end
+
+  def lives_lost
+    game = self
+    count = 0
+    game.students.each do |s|
+      count += s.lives
+    end
+    case count
+    when 0
+      "Claqué au sol"
+    when 1..5
+      "Roi du burnout"
+    when 6..15
+      "Le boucher du wagon"
+    when 16..25
+      "Teacher bisounours"
+    when 26..30
+      "Sebou s'inspire de toi"
+    end
+  end
+
   private
 
   def create_buddies(students)
     count = 1
-    8.times do
+    6.times do
       student1 = students.sample
       students.delete(student1)
 
