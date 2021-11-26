@@ -19,8 +19,13 @@ class GamesController < ApplicationController
     students = @game.students
     @daily_results = @game.daily_challenge.daily_result
     if params['help'] == 'skip'
-      @game.skip_day
-      redirect_to game_daily_result_path(@game, @daily_results)
+      if @game.daily_challenge.position < 20
+        @game.skip_day
+        redirect_to game_daily_result_path(@game, @daily_results)
+      else
+        finish_game(@game)
+        redirect_to game_daily_results_path(@game)
+      end
     else
       if @game.current_hour < 18
         next_hour(@game, students)
@@ -30,7 +35,7 @@ class GamesController < ApplicationController
         redirect_to game_daily_result_path(@game, @daily_results)
       else
         finish_game(@game)
-        redirect_to games_path
+        redirect_to game_daily_results_path(@game)
       end
     end
   end

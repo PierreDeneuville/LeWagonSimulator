@@ -1,10 +1,4 @@
 <h1>show_view</h1>
-
-  <div class="button-help">
-  </div>
-
-
-
 <div class="container-show-games">
   <%# <h1>show_view</h1> %>
   <div class="side-bar">
@@ -16,8 +10,10 @@
     <div class="btn-action">
       <% if @game.current_hour < 18 %>
         <%= link_to '+1H', game_path(@game), method: :patch, class: "btn btn-primary" %>
-      <% else %>
+      <% elsif @game.current_hour == 18 && @game.daily_challenge.position != 20  %>
         <%= link_to 'Fin de journée', game_path(@game), method: :patch, class: "btn btn-primary" %>
+      <% elsif @game.current_hour == 18 && @game.daily_challenge.position == 20 %>
+        <%= link_to 'Fin de partie', game_daily_results_path(@game), class: "btn btn-primary" %>
       <% end %>
   
 
