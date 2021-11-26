@@ -1,5 +1,3 @@
-
-
 <div class="banner-general">
   <div class="container-banner-text">
     <h1><strong>Le Wagon Simulator gerez vos etudiants a vos risques & perils !</strong>!</h1>
@@ -20,7 +18,7 @@
         <% end %>
   </div>
 </div>
-
+<!--
 <div class="container-leaderboard">
   <div class="leaderboard">
     <ul>
@@ -31,12 +29,13 @@
     <br>
       <li><%= current_user.name %></li>
       <li> <%= current_user.batch_number %></li>
-      <li><%= current_game.score %></li>
+      <li><%#= current_game.score %></li>
     </ul>
   </div>
 </div>
+-->
 
-<div id="msg"/>
+<%# <div id="msg"/>
 <script>
 var showText = function (target, message, index, interval) {
   if (index < message.length) {
@@ -48,4 +47,4 @@ var showText = function (target, message, index, interval) {
 $(function () {
   showText("#msg", "Hello, World!", 0, 500);
 });
-</script>
+</script> %>
