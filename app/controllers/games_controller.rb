@@ -3,6 +3,10 @@ class GamesController < ApplicationController
     @games = Game.all
   end
 
+  def show
+    @game = Game.find(params[:id])
+  end
+
   def create
     @game = Game.new(user: current_user, score: 0, is_over: false, daily_challenge: DailyChallenge.first, current_hour: 9)
     @game.save
@@ -10,9 +14,6 @@ class GamesController < ApplicationController
     redirect_to game_path(@game)
   end
 
-  def show
-    @game = Game.find(params[:id])
-  end
 
   def update
     @game = Game.find(params[:id])

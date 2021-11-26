@@ -10,41 +10,14 @@
 
 <div class="container-btn-play">
   <div class="btn btn-play">
-        <% current_game = current_user.games.find_by(is_over: false) %>
+        <% if current_user %>
+          <% current_game = current_user.games.find_by(is_over: false) %>
+
         <% if current_user.games.empty? || current_game.nil? %>
           <%= link_to "PLAY", games_path, method: :post, class: "btn btn-play" %>
         <% else %>
           <%= link_to 'PLAY', game_path(current_game) %>
         <% end %>
+        <% end %>
   </div>
 </div>
-<!--
-<div class="container-leaderboard">
-  <div class="leaderboard">
-    <ul>
-      <li>Player</li>
-      <li>N*batch</li>
-      <li>Score</li>
-    <br>
-    <br>
-      <li><%= current_user.name %></li>
-      <li> <%= current_user.batch_number %></li>
-      <li><%#= current_game.score %></li>
-    </ul>
-  </div>
-</div>
--->
-
-<%# <div id="msg"/>
-<script>
-var showText = function (target, message, index, interval) {
-  if (index < message.length) {
-    $(target).append(message[index++]);
-    setTimeout(function () { showText(target, message, index, interval); }, interval);
-  }
-}
-
-$(function () {
-  showText("#msg", "Hello, World!", 0, 500);
-});
-</script> %>
