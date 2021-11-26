@@ -2,11 +2,10 @@ const helpStudent = () => {
   const buttonHelp = document.querySelector('.button-help')
   const container = document.querySelector('.container-show-games');
   if(container) {
-    const students = document.querySelectorAll('.card');
+    const students = document.querySelectorAll('.student1');
     students.forEach((student) => {
       student.addEventListener('click', (e) => {
         e.preventDefault();
-        console.log(student.dataset.teacherHelp == '');
         buttonHelp.innerHTML = '';
         if(student.dataset.isHelped == 'false' && student.dataset.canHelp == 'true') {
           buttonHelp.insertAdjacentHTML('beforeend',
