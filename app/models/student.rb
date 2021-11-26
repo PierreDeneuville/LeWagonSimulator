@@ -54,12 +54,16 @@ class Student < ApplicationRecord
       # student.success_probability = student.exercise.success_probability
       daily_result.score += student.lives * (student.exercise.position + 1)
       daily_result.save
-
-
+      student.game.score += student.lives * (student.exercise.position + 1)
+      student.game.save
 
     elsif god_number <= student.success_probability && student.exercise.position < 6
-      daily_result.score += student.lives
+      score_to_add = student.lives
+      daily_result.score += score_to_add
       daily_result.save
+      student.game.score += score_to_add
+      student.game.save
+
       new_position_exercise = student.exercise.position + 1
       next_exercise = student.game.daily_challenge.exercises.find_by(position: new_position_exercise)
       student.exercise = next_exercise
