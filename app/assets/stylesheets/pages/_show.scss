@@ -1,0 +1,54 @@
+.container-show-games {
+  display: flex;
+  grid-template-columns: 1fr 1fr;
+  min-width: 100vh; 
+  min-height: 100vh;
+  grid-gap: 26px; 
+  position: relative;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative; 
+  width: 78%;
+  height: 97vh;
+  border: 1px solid;
+  align-items: center;
+  margin: 10px 0;
+
+}
+
+.side-bar {
+  position: relative;
+  border: 1px solid;
+  width: 17%;
+  margin-left: 20px;
+  height: 97vh;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.time {
+  display: grid;
+  font-size: 20px;
+  height: 30%;
+  margin-top: 20px;
+  align-items: center;
+}
+.fa-clock {
+  font-size: 125px;
+}
+
+.student1 {
+  position: relative;
+  background-image: url(student1.png);
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  top: -28px;
+  margin-left: 40%;
+  display: none;
+}

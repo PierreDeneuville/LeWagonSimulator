@@ -18,7 +18,7 @@ class Game < ApplicationRecord
     end
   end
 
- STUDENTS_NAME = ["ced", "fred", "julien", "julia", "shimon", "pierre", "christopher", "nathan", "nadia", "suzette", "romain", "buffy", "jeremy", "moussa", "melanie", "claudine"]
+ STUDENTS_NAME = ["ced", "fred", "julien", "julia", "shimon", "pierre", "christopher", "nathan", "nadia", "suzette", "romain", "buffy"]
 
   def create_students
     exercise = DailyChallenge.first.exercises.first
@@ -104,7 +104,7 @@ class Game < ApplicationRecord
 
   def create_buddies(students)
     count = 1
-    8.times do
+    6.times do
       student1 = students.sample
       students.delete(student1)
 
