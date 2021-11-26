@@ -43,10 +43,12 @@
 
 .student1 {
   position: relative;
-  background-color: black;
-  width: 20px;
-  height: 20px;
+  background-image: url(student1.png);
+  background-size: contain;
+  width: 30px;
+  height: 30px;
   text-align: center;
-  top: -10px;
+  top: -28px;
   margin-left: 40%;
+  display: none;
 }
