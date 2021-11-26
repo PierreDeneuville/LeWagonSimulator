@@ -1,17 +1,61 @@
-<h1>show_view</h1>
-<div class="button-help">
-</div>
-
-<%= link_to '+1H', game_path(@game), method: :patch, class: "btn btn-primary" %>
-<br>
-<%= @game.current_hour %>H &nbsp;<%= @game.daily_challenge.position  %>jours
-<br>
 
 
-<div class="container-show-games" style= "display:grid; grid-template-columns: 1fr 1fr 1fr 1fr; grid-gap: 26px; margin-top: 16px; ">
+
+<div class="container-show-games">
+  <%# <h1>show_view</h1> %>
+  <div class="side-bar">
+    <div class="time">
+      Jour &nbsp;<%= @game.daily_challenge.position %>
+      <i class="far fa-clock"></i>  
+      <%= @game.current_hour %>H 
+    </div>
+    <div class="btn-action">
+      <%= link_to '+1H', game_path(@game), method: :patch, class: "btn btn-primary" %>
+      <div class="button-help"></div>                               
+    </div>
+    <div class="score">
+      <p>Score : <%= "#{}" %> pts </p>
+    </div>
+  </div>
+
+  <div class="workspace">
+    <div class="row-left">
+      <div class="buddy-table">
+        <div class="table t1">
+          <div class="student1"></div>
+        </div>
+        <div class="table t2">
+          <div class="student1"></div>
+        </div>
+      </div>
+      <div class="buddy-table">
+        <div class="table t5"><div class="student1"></div></div>
+        <div class="table t6"><div class="student1"></div></div>
+      </div>
+      <div class="buddy-table">
+        <div class="table t9"><div class="student1"></div></div>
+        <div class="table t10"><div class="student1"></div></div>
+      </div>
+    </div>
+    <div class="row-right">
+      <div class="buddy-table">
+        <div class="table t3"><div class="student1"></div></div>
+        <div class="table t4"><div class="student1"></div></div>
+      </div>
+      <div class="buddy-table">
+        <div class="table t7"><div class="student1"></div></div>
+        <div class="table t8"><div class="student1"></div></div>
+      </div>
+      <div class="buddy-table">
+        <div class="table t11"><div class="student1"></div></div>
+        <div class="table t12"><div class="student1"></div></div>
+      </div>
+    </div> 
+  </div>
+<!--
   <% @game.students.order(:classroom_position).each do |student| %>
     <%= link_to do %>
-      <div class="card" style="width: 18rem;" data-student-id=<%= student.id %> data-game-id=<%= @game.id %>>
+      <div class="card-student" style="width: 18rem;" data-student-id=<%= student.id %> data-game-id=<%= @game.id %>>
         <div class="card-body">
           <h5 class="card-title"><%= student.name %></h5>
         </div>
@@ -22,5 +66,5 @@
         </ul>
       </div>
     <% end %>
-  <% end %>
-</div>
+  <% end %> -->
+</div> 

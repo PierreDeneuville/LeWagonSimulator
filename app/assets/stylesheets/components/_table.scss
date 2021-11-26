@@ -1,0 +1,24 @@
+.table {
+  height: 130px;
+  width: 130px;
+  background-image: '../images/desk.png';
+  border: 0.5px solid;
+}
+
+.row-left {
+  display: inline-block;
+  position: left;
+}
+
+.row-right {
+  display: inline-block;
+  position: right;
+}
+
+.buddy-table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 80px;
+}
