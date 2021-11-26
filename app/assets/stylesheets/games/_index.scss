@@ -1,0 +1,86 @@
+// concerne css de la banner à mettre dans "components/banner.scss" + "@import" dans "application.scss"
+
+.banner-general {
+  background-image: url(red_banner.png);
+  // background-size: cover;
+  // background-position: center;
+  height: 25%;
+}
+
+.container-banner-text h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.container-banner-text p {
+  font-size: 20px;
+  color: white;
+  opacity: 1;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-align: center;
+}
+// fin de la banner css
+
+// concerne css du bouton play pas perdre de temps
+.container-btn-play {
+  text-align: center;
+  margin: 30px;
+}
+
+.btn-play {
+  border: 0;
+  line-height: 2.5;
+  padding: 5px 60px;
+  font-size: 2rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: rgba(220, 0, 0, 1);
+  background-image: linear-gradient(to top left, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2) 30%, rgba(0, 0, 0, 0));
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),inset -2px -2px 3px rgba(0, 0, 0, .6);
+
+}
+
+.btn_play:hover {
+ background-color: rgba(255, 0, 0, 1);
+}
+
+.btn_play:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6), inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+// fin du bouton play
+
+// concerne container leader-board
+
+.container-leaderboard{
+  width: auto;
+  padding-bottom: 300px;
+  // height: 44vh;
+  background: tomato;
+  font-size: x-large;
+  text-align: center;
+  font-family: system-ui;
+  margin: 5% 5% 5% 5%;
+  border: 2px solid;
+  border-radius: 20px;
+}
+
+.leaderboard {
+  color: black;
+}
+.leaderboard li{
+    float: left;
+    width: 33%;/*100% divisé par le nombre d'éléments de menu*/
+    text-align: center;/*Centre le texte dans les éléments de menu*/
+}
+.leaderboard ul {
+  list-style-type: none;
+}
+
+// fin du container leader-bord
