@@ -1,50 +1,24 @@
-<div class="banner-general">
+<div class="container-index">
+  <h1 class='title-index'>Le Wagon Simulator</h1>
+  <% if current_user.nil? %>
+      <%= link_to "PLAY",  new_user_session_path, class: "btn-play" %>
+    <% else %>
+      <% current_game = current_user.games.find_by(is_over: false) %>
+      <% if current_user.games.empty? || current_game.nil? %>
+        <%= link_to "PLAY", games_path, method: :post, class: "btn-play" %>
+      <% else %>
+        <%= link_to 'PLAY', game_path(current_game), class: "btn-play" %>
+      <% end %>
+  <% end %>
+  <p class='reflet'>Le Wagon Simulator</p> 
+</div>
+
+<%# <div class="banner-general">
   <div class="container-banner-text">
-    <h1><strong>Le Wagon Simulator gerez vos etudiants a vos risques & perils !</strong>!</h1>
-      <p>16 etudiants a mener vers la resussite, serez vous de taille !</p>
-      <p>Gérez judicieusement vos atouts, buddies, teacher, timing</p>
-      <p>Gérez vos pauses efficacement, Café corsé, Reboot, et bien plus encore.</p>
-      <p>N'oublie pas quand tu PLAY la vie de tes élèves sont en jeux !!</p>
+    <p><strong>Le Wagon Simulator</strong>!</p>
+      <p>16 etudiants à mener vers la réussite </p>
+      <p>20 jours pour en faire des dévs Fullstack</p>
+      <p>Serez vous de taille ? </p>
   </div>
-</div>
+</div> %>
 
-<div class="container-btn-play">
-  <div class="btn btn-play">
-        <% current_game = current_user.games.find_by(is_over: false) %>
-        <% if current_user.games.empty? || current_game.nil? %>
-          <%= link_to "PLAY", games_path, method: :post, class: "btn btn-play" %>
-        <% else %>
-          <%= link_to 'PLAY', game_path(current_game) %>
-        <% end %>
-  </div>
-</div>
-<!--
-<div class="container-leaderboard">
-  <div class="leaderboard">
-    <ul>
-      <li>Player</li>
-      <li>N*batch</li>
-      <li>Score</li>
-    <br>
-    <br>
-      <li><%= current_user.name %></li>
-      <li> <%= current_user.batch_number %></li>
-      <li><%#= current_game.score %></li>
-    </ul>
-  </div>
-</div>
--->
-
-<%# <div id="msg"/>
-<script>
-var showText = function (target, message, index, interval) {
-  if (index < message.length) {
-    $(target).append(message[index++]);
-    setTimeout(function () { showText(target, message, index, interval); }, interval);
-  }
-}
-
-$(function () {
-  showText("#msg", "Hello, World!", 0, 500);
-});
-</script> %>

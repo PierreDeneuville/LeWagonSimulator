@@ -1,1 +1,125 @@
 // Specific CSS for your home-page
+// button wagon
+.container-index {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient( 45deg, rgb(0, 92, 129), rgb(3, 29, 100), rgb(10, 3, 109), rgb(51, 6, 110), rgb(95, 1, 32));
+  background-size: 300%;
+  animation: bg-anim 15s infinite alternate; 
+}
+body {
+  background-image: linear-gradient( 45deg, rgb(0, 92, 129), rgb(3, 29, 100), rgb(10, 3, 109), rgb(51, 6, 110), rgb(95, 1, 32));
+  animation: bg-anim 15s infinite alternate; 
+}
+.title-index {
+  margin-bottom: 20px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-radius: 0.50em;
+}
+
+.btn-play {
+  font-size: x-large;
+  cursor: pointer;
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  color: rgba(255, 0, 0, 0.692);
+  border:rgba(255, 0, 0, 0.692) 0.125em solid;
+  //text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em rgba(255, 0, 0, 0.692);
+  padding: 0.25em 1em;
+  border-radius: 0.80em;
+  box-shadow: 0 0 0.5em 0 rgba(255, 0, 0, 0.692), inset 0 0 0.5em rgba(255, 0, 0, 0.692);
+  position: relative;
+  
+}
+
+.btn-play::before {
+  content: '';
+  position: absolute;
+  background: rgba(255, 0, 0, 0.692);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.3;
+  transition: 1s linear;
+}
+
+.btn-play::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em rgba(255, 0, 0, 0.692);
+  opacity: 0;
+  background: rgba(255, 0, 0, 0.692);
+  z-index: -1;
+  transition: opacity 2s linear;
+}
+
+.btn-play:hover {
+  z-index: 1;
+  text-decoration: none;
+  color: rgba(255, 0, 0, 0.692);
+  text-shadow: none;
+}
+
+.btn-play:hover::before {
+  box-shadow: 0 0 2.5em 0.9em rgba(255, 0, 0, 0.692);
+  opacity: 1;
+}
+.btn-play:hover::after {
+  box-shadow: 0 0 3em 1.2em rgba(255, 0, 0, 0.692);
+  opacity: 1;
+}
+// .wagon {
+//   display: block;
+//   text-align: center;
+// }
+
+
+@keyframes bg-anim {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+
+//reflet
+
+.reflet {
+  margin-top: 19px;
+  font-size: 47px;
+  transform: rotateX(130deg);
+  background-clip: content-box;
+  color: rgb(0, 0, 0);
+  opacity: 0.3;
+  animation: reflect 15s infinite alternate;
+}
+@keyframes reflect {
+  from {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+  to {
+    opacity: 0.3;
+    transform: rotateX(130deg);
+  }
+}
