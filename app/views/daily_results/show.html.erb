@@ -1,5 +1,17 @@
-Jour: <%= @daily_result.daily_challenge.position %>
-Score: <%= @daily_result.score %>
-Score total: <%= @game.score  %>
+<div class= "container">
 
-<%= link_to 'Jour suivant', game_path(@daily_result.game) %>
+  <div class="score-table ">
+    <div class="title">
+      <h1> Jour <%= @daily_result.daily_challenge.position %> </h1>
+    </div>
+
+    <div class="results">
+      <h4>Score de la journée <%= @daily_result.score %> pts</h4>
+      <h4>Score total <%= @game.score  %> pts</h4>
+    </div>
+
+    <%= link_to 'Jour suivant', game_path(@game), method: :get, class:'btn btn-success' %>
+
+  </div>
+
+</div>
