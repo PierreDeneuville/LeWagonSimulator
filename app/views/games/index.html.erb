@@ -1,7 +1,10 @@
-<h1>Games INdex View</h1>
-<% current_game = current_user.games.find_by(is_over: false) %>
-  <% if current_user.games.empty? || current_game.nil? %>
-    <%= link_to "PLAY", games_path, method: :post, class: "btn btn-danger" %>
-  <% else %>
-    <%= link_to 'PLAY', game_path(current_game) %>
-    <% end %>
+<div class="container-index">
+  <h1 class='title-index'>Le Wagon Simulator</h1>
+  <% current_game = current_user.games.find_by(is_over: false) %>
+    <% if current_user.games.empty? || current_game.nil? %>
+      <%= link_to "PLAY", games_path, method: :post, class: "btn-play" %>
+    <% else %>
+      <%= link_to 'PLAY', game_path(current_game), class: "btn-play" %>
+      <% end %>
+  <p class='reflet'>Le Wagon Simulator</p> 
+</div>
