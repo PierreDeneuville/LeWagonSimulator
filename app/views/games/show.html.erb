@@ -4,8 +4,8 @@
   <div class="side-bar">
     <div class="time">
       Jour &nbsp;<%= @game.daily_challenge.position %>
-      <i class="far fa-clock"></i>  
-      <%= @game.current_hour %>H 
+      <i class="far fa-clock"></i>
+      <%= @game.current_hour %>H
     </div>
     <div class="btn-action">
       <% if @game.current_hour < 18 %>
@@ -15,7 +15,7 @@
       <% elsif @game.current_hour == 18 && @game.daily_challenge.position == 20 %>
         <%= link_to 'Fin de partie', game_daily_results_path(@game), class: "btn btn-primary" %>
       <% end %>
-  
+
 
       <%= link_to "Skip Day", game_path(@game, {help: 'skip'}), method: :patch, class: "btn btn-primary" %>
 
@@ -46,7 +46,7 @@
               </ul>
           </div>
         </div>
-          
+
         <div class="table t2">
           <%= link_to do %>
             <div class="student1" data-can-help=<%= @students[1].can_help? %> data-is-helped=<%= @students[1].is_helped  %> data-student-id=<%= @students[1].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>></div>
@@ -209,7 +209,7 @@
           </div>
         </div>
       </div>
-    </div> 
+    </div>
   </div>
 <!--
   <% @game.students.order(:classroom_position).each do |student| %>
@@ -226,4 +226,18 @@
       </div>
     <% end %>
   <% end %> -->
-</div> 
+</div>
+
+<div class="le-wagon"></div>
+<div class="students students1 no-display"></div>
+<div class="students students2 no-display"></div>
+<div class="students students3 no-display"></div>
+<div class="students students4 no-display"></div>
+<div class="students students5 no-display"></div>
+<div class="students students6 no-display"></div>
+<div class="students students7 no-display"></div>
+<div class="students students8 no-display"></div>
+<div class="students students9 no-display"></div>
+<div class="students students10 no-display"></div>
+<div class="students students11 no-display"></div>
+<div class="students students12 no-display"></div>
