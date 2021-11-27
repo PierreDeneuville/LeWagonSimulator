@@ -11,13 +11,13 @@
       <% if @game.current_hour < 18 %>
         <%= link_to '+1H', game_path(@game), method: :patch, class: "btn btn-primary" %>
       <% elsif @game.current_hour == 18 && @game.daily_challenge.position != 20  %>
-        <%= link_to 'Fin de journée', game_path(@game), method: :patch, class: "btn btn-primary end-day", remote: true %>
+        <%= link_to 'Fin de journée', game_path(@game), method: :patch, class: "btn btn-primary end-day" %>
       <% elsif @game.current_hour == 18 && @game.daily_challenge.position == 20 %>
-        <%= link_to 'Fin de partie', game_daily_results_path(@game), class: "btn btn-primary end-game", remote: true %>
+        <%= link_to 'Fin de partie', game_daily_results_path(@game), class: "btn btn-primary end-game" %>
       <% end %>
 
 
-      <%= link_to "Skip Day", game_path(@game, {help: 'skip'}), remote: true, method: :patch, class: "btn btn-primary" %>
+      <%= link_to "Skip Day", game_path(@game, {help: 'skip'}), method: :patch, class: "btn btn-primary" %>
 
       <div class="button-help">
       </div>

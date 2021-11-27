@@ -1,5 +1,7 @@
 const wagon = document.querySelector('.le-wagon');
 const elements = document.querySelectorAll('.student1')
+const scoreTable = document.querySelector('.score-table')
+const containerIndex = document.querySelector('.container-index')
 let i = 1
 
 const studentAnime = (elements, i) => {
@@ -54,9 +56,20 @@ const gameShowAnimate = () => {
 
     }
 
+  } else if(scoreTable) {
+    window.addEventListener('load', (e) => {
+      wagonArrive()
+      setTimeout(wagonLeave, 6000)
+
+    })
+  } else if(containerIndex) {
+    window.addEventListener('load', (e) => {
+      wagonArrive()
+      setTimeout(wagonLeave, 8000)
+    })
   }
 
-  }
+}
 
 
 

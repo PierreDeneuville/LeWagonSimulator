@@ -4,6 +4,7 @@ const wagon = document.querySelector('.le-wagon')
 const students = document.querySelectorAll('.student1')
 
 
+
 const wagonArrive = () => {
   $(wagon).animate({
     left: 864
