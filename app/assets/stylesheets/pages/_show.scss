@@ -43,8 +43,6 @@
 
 .student1 {
   position: relative;
-  // background-image: url(student1.png);
-  background-color: transparent;
   background-size: contain;
   width: 30px;
   height: 30px;
@@ -75,4 +73,7 @@
 }
 .no-display {
   display: none;
+}
+.background-appear {
+  background-image: url(student1.png);
 }

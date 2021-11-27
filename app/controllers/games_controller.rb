@@ -16,6 +16,7 @@ class GamesController < ApplicationController
 
 
   def update
+    # raise
     @game = Game.find(params[:id])
     students = @game.students
     @daily_results = @game.daily_challenge.daily_result

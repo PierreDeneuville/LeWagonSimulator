@@ -19,6 +19,7 @@ const studentAnime = (elements, i) => {
     studentAnime(elements, i)
 
   }
+
 }
 
 const wagonArrive = () => {
@@ -35,17 +36,23 @@ const wagonLeave = () => {
 }
 const gameShowAnimate = () => {
   const container = document.querySelectorAll('.container-show-games')
-  if(container) {
-    window.addEventListener('load', (e) => {
+  const time = document.querySelector('.time');
+  if(container && time) {
+    if (time.innerText.includes('9H')) {
+      window.addEventListener('load', (e) => {
+        elements.forEach((element) => {
+          element.classList.remove('background-appear')
+        })
+        wagonArrive()
+        setTimeout(function () {
+          studentAnime(elements, i);
+        }, 3500)
 
-      wagonArrive()
-      setTimeout(function () {
-        studentAnime(elements, i);
-      }, 3500)
+        setTimeout(wagonLeave, 6000)
 
-      setTimeout(wagonLeave, 6000)
+      })
 
-    })
+    }
 
   }
 
