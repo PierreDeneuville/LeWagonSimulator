@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
   background-size: 300%;
-  background-color: (#261447);
+  background-color: (#0D0221);
   border-radius: 0%;
   // animation: bg-anim 15s infinite alternate; 
 }
@@ -38,13 +38,12 @@
   display: inline-block;
   align-items: center;
   text-align: center;
-  color: #2DE2E6;
+  color: whitesmoke;
   border:#2DE2E6 0.125em solid;
-  //text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em rgba(255, 0, 0, 0.692);
   padding: 0.25em 1em;
   box-shadow: 0 0 0.5em 0 #2DE2E6, inset 0 0 0.5em #2DE2E6;
   position: relative;
-  
+  text-shadow: 2px 2px 0px #FF6C11;
 }
 
 .btn-play::before {
@@ -69,7 +68,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  box-shadow: 0 0 2em 0.5em #2DE2E6(255, 0, 0, 0.692);
+  box-shadow: 0 0 2em 0.5em #2DE2E6;
   opacity: 0;
   background: #2DE2E6;
   z-index: -1;
@@ -79,9 +78,11 @@
 .btn-play:hover {
   z-index: 1;
   text-decoration: none;
-  color: #2DE2E6;
-  text-shadow: none;
+  color: whitesmoke;
+  text-shadow: 0px -50px 0px #FF6C11;
+  transition: 1s;
 }
+
 
 .btn-play:hover::before {
   box-shadow: 0 0 2.5em 0.9em #2DE2E6;
@@ -130,6 +131,11 @@
 // }
 
 //soleil
+@keyframes pulse {
+  to {
+    box-shadow: 0 0 8.5em 0 #FF6C11;
+  }
+}
 .sun {
   width: 300px;
   height: 300px;
@@ -138,10 +144,11 @@
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 0 18.8em 0 #FF6C11;
-  top: -150px
-  
+  box-shadow: 0 0 18em 0 #FF6C11;
+  top: -150px;
+  animation: pulse 5s infinite alternate;
 }
+
 .sun1 {
   width: 100%;
   height: 40%;
@@ -208,4 +215,9 @@
   filter: blur(1em);
   opacity: 0.3;
   transition: 1s linear;
+}
+
+
+.btn-game {
+  margin: 150px
 }
