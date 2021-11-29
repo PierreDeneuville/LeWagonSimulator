@@ -104,8 +104,8 @@ class Game < ApplicationRecord
     return count
   end
 
-  def lives_lost
-    30 - lives_remain
+  def lives_lost(game)
+    (game.students.count * 3) - lives_remain
   end
 
   private
