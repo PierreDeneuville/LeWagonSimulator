@@ -25,6 +25,8 @@ require("channels")
 // External imports
 import "bootstrap";
 import { helpStudent } from '../components/button_student'
+import { gameShowAnimate } from '../plugins/wagon_animation'
+import {  animationLeaving } from '../plugins/wagon_leaving'
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -32,4 +34,6 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   helpStudent();
+  gameShowAnimate();
+  animationLeaving();
 });
