@@ -10,7 +10,7 @@
       <h4>Score total <%= @game.score  %> pts</h4>
     </div>
 
-    <%= link_to 'Jour suivant', game_path(@game), class:'btn btn-success' %>
+    <%= link_to 'Jour suivant', refresh_path(game: @game), class:'btn btn-success', turbolinks: false, remote: false %>
 
   </div>
 

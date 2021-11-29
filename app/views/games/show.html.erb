@@ -1,84 +1,96 @@
 
 <div class="container-show-games">
-  <%# <h1>show_view</h1> %>
-  <div class="side-bar">
-    <div class="time">
-      Jour &nbsp;<%= @game.daily_challenge.position %>
-      <i class="far fa-clock"></i>
-      <%= @game.current_hour %>H
-    </div>
+
+  <div class="interface-actions">
     <div class="btn-action">
       <% if @game.current_hour < 18 %>
-        <%= link_to '+1H', game_path(@game), method: :patch, class: "btn btn-primary" %>
+        <%= link_to '+1H', game_path(@game), method: :patch, class: "button-rpg time-change" %>
       <% elsif @game.current_hour == 18 && @game.daily_challenge.position != 20  %>
-        <%= link_to 'Fin de journée', game_path(@game), method: :patch, class: "btn btn-primary end-day" %>
+        <%= link_to 'Fin de journée', game_path(@game), method: :patch, class: "button-rpg time-change end-day" %>
       <% elsif @game.current_hour == 18 && @game.daily_challenge.position == 20 %>
-        <%= link_to 'Fin de partie', game_daily_results_path(@game), class: "btn btn-primary end-game" %>
+        <%= link_to 'Fin de partie', game_daily_results_path(@game), class: "button-rpg time-change end-game" %>
       <% end %>
-
-
-      <%= link_to "Skip Day", game_path(@game, {help: 'skip'}), method: :patch, class: "btn btn-primary" %>
 
       <div class="button-help">
       </div>
-    </div>
-    <div class="score">
-      <p>Score : <%= @game.score %> pts </p>
-    </div>
+
   </div>
-  <% @students = @game.students.order(classroom_position: :asc) %>
-
-            <div class="background-appear" data-can-help=<%= @students[0].can_help? %> data-is-helped=<%= @students[0].is_helped  %> data-student-id=<%= @students[0].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>>
-            </div>
-
->
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item"><%= @students[0].name %></li>
-                <li class="list-group-item"><%= @students[0].lives %> Vies</li>
-                <li class="list-group-item"><%= @students[0].success_probability %>%</li>
-                <li class="list-group-item">Exercice: <%= @students[0].exercise.position %></li>
-              </ul>
 
 
+    <div class="time">
+      <%= @game.current_hour %>H
+    </div>
 
+
+    <div class="game-interface"></div>
+
+</div>
+
+
+<% @students = @game.students.order(classroom_position: :asc) %>
+<div data-can-help=<%= @students[0].can_help? %> data-is-helped=<%= @students[0].is_helped  %> data-student-id=<%= @students[0].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>>
 </div>
 
 <div class="tables table-1">
-<div class="studs student-1"></div>
+<%= link_to do %>
+<div class="studs student-1" data-can-help=<%= @students[0].can_help? %> data-is-helped=<%= @students[0].is_helped  %> data-student-id=<%= @students[0].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %> ></div>
 </div>
+<% end %>
 <div class="tables table-2">
-<div class="studs student-2"></div>
+<%= link_to do %>
+<div class="studs student-2" data-can-help=<%= @students[1].can_help? %> data-is-helped=<%= @students[1].is_helped  %> data-student-id=<%= @students[1].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>></div>
 </div>
+<% end %>
 <div class="tables table-3">
-<div class="studs student-3"></div>
+<%= link_to do %>
+<div class="studs student-3" data-can-help=<%= @students[2].can_help? %> data-is-helped=<%= @students[2].is_helped  %> data-student-id=<%= @students[2].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>></div>
 </div>
+<% end %>
 <div class="tables table-4">
-<div class="studs student-4"></div>
+<%= link_to do %>
+<div class="studs student-4" data-can-help=<%= @students[3].can_help? %> data-is-helped=<%= @students[3].is_helped  %> data-student-id=<%= @students[3].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>></div>
 </div>
+<% end %>
 <div class="tables table-5">
-<div class="studs student-5"></div>
+<%= link_to do %>
+<div class="studs student-5" data-can-help=<%= @students[4].can_help? %> data-is-helped=<%= @students[4].is_helped  %> data-student-id=<%= @students[4].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>></div>
 </div>
+<% end %>
 <div class="tables table-6">
-<div class="studs student-6"></div>
+<%= link_to do %>
+<div class="studs student-6" data-can-help=<%= @students[5].can_help? %> data-is-helped=<%= @students[5].is_helped  %> data-student-id=<%= @students[5].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>></div>
 </div>
+<% end %>
 <div class="tables table-7">
-<div class="studs student-7"></div>
+<%= link_to do %>
+<div class="studs student-7" data-can-help=<%= @students[6].can_help? %> data-is-helped=<%= @students[6].is_helped  %> data-student-id=<%= @students[6].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>></div>
 </div>
+<% end %>
 <div class="tables table-8">
-<div class="studs student-8"></div>
+<%= link_to do %>
+<div class="studs student-8" data-can-help=<%= @students[7].can_help? %> data-is-helped=<%= @students[7].is_helped  %> data-student-id=<%= @students[7].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>></div>
 </div>
+<% end %>
 <div class="tables table-9">
-<div class="studs student-9"></div>
+<%= link_to do %>
+<div class="studs student-9" data-can-help=<%= @students[8].can_help? %> data-is-helped=<%= @students[8].is_helped  %> data-student-id=<%= @students[8].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>></div>
 </div>
+<% end %>
 <div class="tables table-10">
-<div class="studs student-10"></div>
+<%= link_to do %>
+<div class="studs student-10 data-can-help=<%= @students[9].can_help? %> data-is-helped=<%= @students[9].is_helped  %> data-student-id=<%= @students[9].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>"></div>
 </div>
+<% end %>
 <div class="tables table-11">
-<div class="studs student-11"></div>
+<%= link_to do %>
+<div class="studs student-11 data-can-help=<%= @students[10].can_help? %> data-is-helped=<%= @students[10].is_helped  %> data-student-id=<%= @students[10].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>"></div>
 </div>
+<% end %>
 <div class="tables table-12">
-<div class="studs student-12"></div>
+<%= link_to do %>
+<div class="studs student-12" data-can-help=<%= @students[11].can_help? %> data-is-helped=<%= @students[11].is_helped  %> data-student-id=<%= @students[11].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>></div>
 </div>
+<% end %>
 
 
 

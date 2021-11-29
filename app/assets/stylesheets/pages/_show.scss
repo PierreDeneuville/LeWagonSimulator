@@ -1,3 +1,4 @@
+
 .container-show-games {
   display: flex;
   grid-template-columns: 1fr 1fr;
@@ -5,9 +6,46 @@
   min-height: 100vh;
   grid-gap: 26px;
   position: relative;
-  background-image: url(classroom.png);
+  // background-image: url(classroom3.png);
   background-repeat: no-repeat;
 }
+.interface-actions {
+  background-image: url(interface-actions.png);
+  width: 220px;
+  height: 835px;
+  position: absolute;
+  top: 27px;
+}
+.game-interface {
+  width: 1122px;
+  height: 835px;
+  position: absolute;
+  top: 0px;
+  left: 284px;
+  background-image: url(game-interface.png);
+}
+.button-rpg {
+  width: 100%;
+  height: 7%;
+  background-image: url(button.PNG);
+  position: absolute;
+  padding: 10px;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  text-align: center;
+  background-repeat: no-repeat;
+}
+.time-change {
+  top: 35%;
+}
+.btn-teacher {
+  top: 60%;
+}
+.btn-buddy {
+  top: 50%;
+}
+
+
 
 // .workspace {
 //   display: grid;
@@ -32,13 +70,14 @@
 //   text-align: center;
 // }
 
-// .time {
-//   display: grid;
-//   font-size: 20px;
-//   height: 30%;
-//   margin-top: 20px;
-//   align-items: center;
-// }
+.time {
+  display: grid;
+  font-size: 20px;
+  height: 30%;
+  margin-top: 20px;
+  align-items: center;
+  color: white;
+}
 // .fa-clock {
 //   font-size: 125px;
 // }
@@ -209,8 +248,8 @@
 
 .main-character {
   background-image: url(charac0Face.png);
-  top: 100px;
-  left: 100px;
+  top: 122px;
+  left: 804px;
 }
 .character {
   position: absolute;

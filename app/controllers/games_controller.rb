@@ -42,6 +42,11 @@ class GamesController < ApplicationController
     end
   end
 
+  def refresh
+    @game = Game.find(params[:game])
+    redirect_to game_path(@game)
+  end
+
   private
 
   def next_hour(game, students)

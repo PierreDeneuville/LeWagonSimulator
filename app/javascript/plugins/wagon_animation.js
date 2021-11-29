@@ -27,6 +27,7 @@ const studentAnime = (studentsArrive, i) => {
 }
 
 const wagonArrive = () => {
+  console.log($(wagon))
   $(wagon).animate({
     left: 766
   }, 3000)
@@ -39,11 +40,14 @@ const wagonLeave = () => {
   }, 3000)
 }
 const gameShowAnimate = () => {
+
   const container = document.querySelectorAll('.container-show-games')
   const time = document.querySelector('.time');
   if(container && time) {
     if (time.innerText.includes('9H')) {
-      window.addEventListener('load', (e) => {
+      // window.addEventListener('load', (e) => {
+      // })
+        console.log('hellooo')
         studs.forEach((student) => {
           student.classList.add('background-remove')
         })
@@ -54,7 +58,6 @@ const gameShowAnimate = () => {
 
         setTimeout(wagonLeave, 6000)
 
-      })
 
     }
 
