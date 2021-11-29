@@ -14,7 +14,6 @@ class GamesController < ApplicationController
     redirect_to game_path(@game)
   end
 
-
   def update
     # raise
     @game = Game.find(params[:id])
@@ -42,10 +41,6 @@ class GamesController < ApplicationController
     end
   end
 
-  def refresh
-    @game = Game.find(params[:game])
-    redirect_to game_path(@game)
-  end
 
   private
 

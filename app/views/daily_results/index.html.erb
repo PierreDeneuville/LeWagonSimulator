@@ -1,26 +1,23 @@
-<div class= "container">
+<div class= "container-score">
 
   <div class="score-table ">
-
-    <div class="title">
-      <h1> Fin de partie </h1>
-    </div>
+    <h1> Fin de partie </h1>
 
     <div class="results">
-      <h3>Score final: <%= @game.score %> pts</h3>
-      <h3>Votre rang: <%= @game.player_rank %> </h3>
-      <h3>Gestion des vies:<%= @game.lives_lost %></h3>
+      <h4>Score final: <%= @game.score %> pts</h4>
+      <h4>Votre rang: <%= @game.player_rank %> </h4>
+      <h4>Vies perdues: <%= @game.lives_lost %></h4>
+      <h4>Gestion des vies: <%= @game.lives_comment %></h4>
     </div>
 
-
-    <%= link_to 'Voir mon classement', root_path, class:'next-button' %>
+    <%= link_to 'Voir mon classement', root_path, class:'btn-game' %>
 
   </div>
 </div>
 <div class="le-wagon"></div>
 
 <!--
-    <h3>Votre progression dans le jeu: </h3>
+    <h3>Progression: </h3>
     <% @daily_results.order(:id).each do |result| %>
     <%= result.score %>
     <% end %>

@@ -1,0 +1,22 @@
+.btn-game {
+  text-decoration: none;
+  font-family: 'Press Start 2P', cursive;
+  font-size: x-large;
+  cursor: pointer;
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  color: #2DE2E6;
+  border:#2DE2E6 0.125em solid;
+  padding: 0.25em 1em;
+  position: relative;
+  text-shadow: 3px 3px 0px #FF3864;
+}
+
+.btn-game:hover {
+  text-decoration: none;
+  color: #2DE2E6;
+  box-shadow: 0 0 0.8em 0 #2DE2E6, inset 0 0 0.5em #2DE2E6
+}
+
+
