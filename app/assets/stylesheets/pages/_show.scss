@@ -5,52 +5,182 @@
   min-height: 100vh;
   grid-gap: 26px;
   position: relative;
+  background-image: url(classroom.png);
+  background-repeat: no-repeat;
 }
 
-.workspace {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+// .workspace {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+//   position: relative;
+//   width: 78%;
+//   height: 97vh;
+//   border: 1px solid;
+//   align-items: center;
+//   margin: 10px 0;
+
+// }
+
+// .side-bar {
+//   position: relative;
+//   border: 1px solid;
+//   width: 17%;
+//   margin-left: 20px;
+//   height: 97vh;
+//   margin-top: 10px;
+//   margin-bottom: 10px;
+//   text-align: center;
+// }
+
+// .time {
+//   display: grid;
+//   font-size: 20px;
+//   height: 30%;
+//   margin-top: 20px;
+//   align-items: center;
+// }
+// .fa-clock {
+//   font-size: 125px;
+// }
+
+// .student1 {
+//   position: relative;
+//   background-size: contain;
+//   width: 30px;
+//   height: 30px;
+//   text-align: center;
+//   top: -28px;
+//   margin-left: 40%;
+//   // display: none;
+// }
+.table-1 {
+  width: 100px;
+  height: 85px;
+  position: absolute;
+  top: 258px;
+  left: 573px;
+}
+.table-2 {
+  width: 100px;
+  height: 85px;
+  position: absolute;
+  top: 258px;
+  left: 685px;
+}
+.table-3 {
+  width: 100px;
+  height: 85px;
+  position: absolute;
+  top: 258px;
+  left: 892px;
+}
+.table-4 {
+  width: 100px;
+  height: 85px;
+  position: absolute;
+  top: 258px;
+  left: 1001px;
+}
+.table-5 {
+  width: 100px;
+  height: 85px;
+  position: absolute;
+  top: 402px;
+  left: 573px;
+}
+.table-6 {
+  width: 100px;
+  height: 85px;
+  position: absolute;
+  top: 402px;
+  left: 685px;
+}
+.table-7 {
+  width: 100px;
+  height: 85px;
+  position: absolute;
+  top: 402px;
+  left: 892px;
+}
+.table-8 {
+  width: 100px;
+  height: 85px;
+  position: absolute;
+  top: 402px;
+  left: 1001px;
+}
+.table-9 {
+  width: 100px;
+  height: 85px;
+  position: absolute;
+  top: 546px;
+  left: 573px;
+}
+.table-10 {
+  width: 100px;
+  height: 85px;
+  position: absolute;
+  top: 546px;
+  left: 685px;
+}
+.table-11 {
+  width: 100px;
+  height: 85px;
+  position: absolute;
+  top: 546px;
+  left: 892px;
+}
+.table-12 {
+  width: 100px;
+  height: 85px;
+  position: absolute;
+  top: 546px;
+  left: 1001px;
+}
+.student-1 {
+  background-image: url(charac1Face.png);
+}
+.student-2 {
+  background-image: url(charac2Face.png);
+}
+.student-3 {
+  background-image: url(charac3Face.png);
+}
+.student-4 {
+  background-image: url(charac4Face.png);
+}
+.student-5 {
+  background-image: url(charac5Face.png);
+}
+.student-6 {
+  background-image: url(charac6Face.png);
+}
+.student-7 {
+  background-image: url(charac7Face.png);
+}
+.student-8 {
+  background-image: url(charac8Face.png);
+}
+.student-9 {
+  background-image: url(charac9Face.png);
+}
+.student-10 {
+  background-image: url(charac10Face.png);
+}
+.student-11 {
+  background-image: url(charac11Face.png);
+}
+.student-12 {
+  background-image: url(charac12Face.png);
+}
+.studs{
   position: relative;
-  width: 78%;
-  height: 97vh;
-  border: 1px solid;
-  align-items: center;
-  margin: 10px 0;
-
+  top: -50px;
+  left: 25px;
+  width: 35px;
+  height: 50px;
 }
 
-.side-bar {
-  position: relative;
-  border: 1px solid;
-  width: 17%;
-  margin-left: 20px;
-  height: 97vh;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.time {
-  display: grid;
-  font-size: 20px;
-  height: 30%;
-  margin-top: 20px;
-  align-items: center;
-}
-.fa-clock {
-  font-size: 125px;
-}
-
-.student1 {
-  position: relative;
-  background-size: contain;
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  top: -28px;
-  margin-left: 40%;
-  // display: none;
-}
 .le-wagon {
   background-image: url(wagon.png);
   background-size: cover;
@@ -61,19 +191,30 @@
   left: -20%;
 }
 .students {
-  background-image: url(student1.png);
   background-size: cover;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 50px;
   position: absolute;
-  top: 90%;
-  left: 63%;
-
+  top: 837px;
+  left: 792px;
+  // background-color: black;
 
 }
 .no-display {
-  display: none;
+  // display: none;
 }
-.background-appear {
-  background-image: url(student1.png);
+.background-remove {
+  background-image: none;
+}
+
+.main-character {
+  background-image: url(charac0Face.png);
+  top: 100px;
+  left: 100px;
+}
+.character {
+  position: absolute;
+  width: 35px;
+  height: 50px;
+  object-fit: contain;
 }

@@ -1,24 +1,26 @@
 const wagon = document.querySelector('.le-wagon');
-const elements = document.querySelectorAll('.student1')
+const studs = document.querySelectorAll('.studs')
 const scoreTable = document.querySelector('.score-table')
 const containerIndex = document.querySelector('.container-index')
+const studentsArrive = document.querySelectorAll('.students')
 let i = 1
 
-const studentAnime = (elements, i) => {
-  if (i <= elements.length) {
-    const element = document.querySelector(`.students${i}`)
-    const final = elements[i - 1]
+const studentAnime = (studentsArrive, i) => {
+  if (i <= studentsArrive.length) {
+    const student = studentsArrive[i - 1]
+    student.style.backgroundImage = `url(/assets/charac${i}Face.png)`
+    const final = studs[i - 1]
     const toTop = final.getBoundingClientRect().top
     const toLeft = final.getBoundingClientRect().left
-    element.classList.remove('no-display')
+    student.classList.remove('no-display')
     i = i + 1
-    $(element).animate({
+    $(student).animate({
       top: toTop
     }, 1500)
-    $(element).animate({
+    $(student).animate({
       left: toLeft
     }, 1500)
-    studentAnime(elements, i)
+    studentAnime(studentsArrive, i)
 
   }
 
@@ -26,7 +28,7 @@ const studentAnime = (elements, i) => {
 
 const wagonArrive = () => {
   $(wagon).animate({
-    left: 864
+    left: 766
   }, 3000)
 
 }
@@ -42,12 +44,12 @@ const gameShowAnimate = () => {
   if(container && time) {
     if (time.innerText.includes('9H')) {
       window.addEventListener('load', (e) => {
-        elements.forEach((element) => {
-          element.classList.remove('background-appear')
+        studs.forEach((student) => {
+          student.classList.add('background-remove')
         })
         wagonArrive()
         setTimeout(function () {
-          studentAnime(elements, i);
+          studentAnime(studentsArrive, i);
         }, 3500)
 
         setTimeout(wagonLeave, 6000)

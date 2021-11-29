@@ -1,13 +1,14 @@
 const endDay = document.querySelector('.end-day')
 const endGame = document.querySelector('.end-game')
 const wagon = document.querySelector('.le-wagon')
-const students = document.querySelectorAll('.student1')
+const students = document.querySelectorAll('.studs')
+// const students = document.querySelectorAll('.student1')
 
 
 
 const wagonArrive = () => {
   $(wagon).animate({
-    left: 864
+    left: 766
   }, 3000)
 
 }
@@ -18,28 +19,28 @@ const wagonLeave = () => {
   }, 3000)
 }
 
-const removeBackground = () => {
+const removeBackground = (student) => {
   students.forEach((student) => {
-    student.classList.remove('background-appear')
+    student.classList.add('background-remove')
   })
 }
+let number = 1
 const studentsLeave = () => {
   students.forEach((student) => {
-    const actualTop = student.getBoundingClientRect().top
-    const actualLeft = student.getBoundingClientRect().left
-    const topGo = 810 - actualTop
-    const leftGo = 907 - actualLeft
-    student.style.position = 'absolute'
-    student.style.top = '-28px'
+    number += 1
+    const toTop = 785 - student.getBoundingClientRect().top
+    const toLeft = 815 - student.getBoundingClientRect().left
     $(student).animate({
-      left: leftGo
-    }, 2000)
+      left: toLeft
+    }, 1500)
     $(student).animate({
-      top: topGo
-    }, 2000, removeBackground)
-
-
+      top: toTop
+    }, 1500)
   })
+  setTimeout(removeBackground, 3000)
+
+
+
 }
 
 
