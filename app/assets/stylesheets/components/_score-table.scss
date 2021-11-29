@@ -1,11 +1,11 @@
 .container-score {
   background-color: #0D0221 ;
+  margin: 5px 80px;
 }
 
 .score-table {
   background-color: #261447 ;
-  color: white;
-  box-shadow: 0 0 10px rgb(248, 248, 250);
+  border: 3px solid #2DE2E6;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -13,28 +13,32 @@
   height: 90vh;
 }
 
-.score-table h1 {
-  font-family: 'Press Start 2P', cursive;
-}
-
-.score-table h3{
-  font-family: 'Press Start 2P', cursive;
-}
-
-h1,h2,h3 {
+.score-table h1,h2,h3,h4 {
   font-family: 'Press Start 2P', cursive;
   margin: 0 auto 0 auto;
   text-align:left;position:relative;
-  text-shadow: 3px 3px 0px #2038ec;
-  color:#fff;
   font-weight:400;
+    color:#fff;
+  text-shadow: 3px 3px 0px #110136;
 }
 
-  // h1{font-size:1.7em;width:260px;top:148px;line-height:60px;padding-left:292px;}
-// h2{top:26px;width:150px;font-size:1.6em;z-index:1;}
-// h2 a{color:#fff;text-decoration:none;margin-left:375px;width:200px;}h2 a:hover{text-shadow: 3px 3px 0px #d82800;}
-// h3{width:400px;padding-right:300px;font-size:1.5em;}
+.score-table h1 {
+  color:#fff;
+  text-shadow: 3px 3px 0px #110136;
+}
+.score-table h2 {
+  color:#fff;
+  // text-shadow: 3px 3px 0px #FF6C11;
+}
+.score-table h3 {
+  color:#fff;
+  // text-shadow: 3px 3px 0px #FF6C11;
+}
 
+.score-table h4 {
+  color:#fff;
+  // text-shadow: 3px 3px 0px #FF6C11;
+}
 
 .next-button {
   font-family: 'Press Start 2P', cursive;
@@ -54,24 +58,3 @@ h1,h2,h3 {
   transform: scale(1.05);
   box-shadow: 0 0 12px rgba(248, 245, 245, 0.7);
 }
-
-
-// .card-demande {
-//   overflow: hidden;
-//   height: 120px;
-//   background: white;
-//   box-shadow: 0 0 10px rgba(0,0,0,0.2);
-
-//   transition: transform 0.3s ease;
-//   display: flex;
-//   align-items: center;
-//   padding: 10px;
-//   margin: 10px 0px;
-// }
-// .card-demande:hover {
-//   transform: scale(1.05);
-//   box-shadow: 0 0 12px rgba(0,0,0,0.3);
-
-// }
-
-// police avec ombre retro
