@@ -20,8 +20,9 @@
   color: #FF6C11;
   position: relative;
   margin-bottom: 20px;
-  top: -50px;
+  top: -290px;
   font-family: 'Press Start 2P', cursive;
+  text-shadow: 3px 3px 0px #0D0221;
 }
 
 // *,
@@ -79,7 +80,7 @@
   z-index: 1;
   text-decoration: none;
   color: whitesmoke;
-  text-shadow: 0px -50px 0px #FF6C11;
+  // text-shadow: 0px -50px 0px #FF6C11;
   transition: 1s;
 }
 
@@ -133,7 +134,7 @@
 //soleil
 @keyframes pulse {
   to {
-    box-shadow: 0 0 8.5em 0 #FF6C11;
+    box-shadow: 0 0 7.5em 0 #FF6C11;
   }
 }
 .sun {
@@ -145,7 +146,7 @@
   overflow: hidden;
   position: relative;
   box-shadow: 0 0 18em 0 #FF6C11;
-  top: -150px;
+  top: -9px;
   animation: pulse 5s infinite alternate;
 }
 
