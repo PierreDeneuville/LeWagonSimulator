@@ -1,4 +1,13 @@
+
 <div class="container-index">
+  <div class="sun">
+    <div class="sun1"></div>
+    <div class="sun2"></div>
+    <div class="sun3"></div>
+    <div class="sun4"></div>
+    <div class="sun5"></div>
+    <div class="sun6"></div>
+  </div>
   <h1 class='title-index'>Le Wagon Simulator</h1>
   <% if current_user.nil? %>
       <%= link_to "PLAY",  new_user_session_path, class: "btn-play" %>
@@ -10,5 +19,5 @@
         <%= link_to 'PLAY', game_path(current_game), class: "btn-play" %>
       <% end %>
   <% end %>
-  <p class='reflet'>Le Wagon Simulator</p>
+  <%# <p class='reflet'>Le Wagon Simulator</p> %>
 </div>
