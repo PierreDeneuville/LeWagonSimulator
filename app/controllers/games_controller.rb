@@ -14,7 +14,6 @@ class GamesController < ApplicationController
     redirect_to game_path(@game)
   end
 
-
   def update
     @game = Game.find(params[:id])
     students = @game.students

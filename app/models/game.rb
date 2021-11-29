@@ -62,42 +62,50 @@ class Game < ApplicationRecord
     final_score = score
     case final_score
     when 0
-      "On ne peux plus rien pour toi"
+      "On ne peux plus rien pour toi 😓"
     when 1..300
-      "Tu ne t'es pas foulé"
+      "Tu ne t'es pas foulé 😕"
     when 301..500
-      "Pas mal, mais pas top non plus"
+      "Pas mal, mais pas top non plus 🤭"
     when 501..1000
-      "Petit bras, petit chocolats"
+      "Petit bras, petit chocolats 😌"
     when 1001..5000
-      "Bien joué"
+      "Bien joué 😉"
     when 5001..10_000
-      "Bonhomme!"
+      "Bonhomme! 😎"
     when 10_001..50_000
-      "Seb"
+      "Dieu du Wagon 🤑"
     else
-      "Ce score est douteux, tu as triché :p"
+      "Ce score est douteux, tu as triché 🤪"
     end
   end
 
-  def lives_lost
+  def lives_comment
+    case lives_remain
+    when 0
+      "Claqué au sol 💩"
+    when 1..5
+      "Roi du burnout 😈"
+    when 6..15
+      "Le boucher du wagon 😱"
+    when 16..25
+      "Teacher bisounours 🤡"
+    when 26..30
+      "Roi des licornes 🦄"
+    end
+  end
+
+  def lives_remain
     game = self
     count = 0
     game.students.each do |s|
       count += s.lives
     end
-    case count
-    when 0
-      "Claqué au sol"
-    when 1..5
-      "Roi du burnout"
-    when 6..15
-      "Le boucher du wagon"
-    when 16..25
-      "Teacher bisounours"
-    when 26..30
-      "Sebou s'inspire de toi"
-    end
+    return count
+  end
+
+  def lives_lost
+    30 - lives_remain
   end
 
   private
