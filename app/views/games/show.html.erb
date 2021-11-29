@@ -3,12 +3,14 @@
 
   <div class="interface-actions">
     <div class="btn-action">
-      <% if @game.current_hour < 18 %>
+      <% if @game.current_hour < 17 %>
+        <%= link_to '+1H', game_path(@game), method: :patch, remote: true, class: "button-rpg time-change" %>
+      <% elsif @game.current_hour == 17 %>
         <%= link_to '+1H', game_path(@game), method: :patch, class: "button-rpg time-change" %>
       <% elsif @game.current_hour == 18 && @game.daily_challenge.position != 20  %>
-        <%= link_to 'Fin de journée', game_path(@game), method: :patch, class: "button-rpg time-change end-day" %>
+        <%= link_to 'Fin de journée', game_path(@game), method: :patch, remote: true, class: "button-rpg time-change end-day" %>
       <% elsif @game.current_hour == 18 && @game.daily_challenge.position == 20 %>
-        <%= link_to 'Fin de partie', game_daily_results_path(@game), class: "button-rpg time-change end-game" %>
+        <%= link_to 'Fin de partie', game_daily_results_path(@game), remote: true, class: "button-rpg time-change end-game" %>
       <% end %>
 
       <div class="button-help">
@@ -34,61 +36,108 @@
 <div class="tables table-1">
 <%= link_to do %>
 <div class="studs student-1" data-can-help=<%= @students[0].can_help? %> data-is-helped=<%= @students[0].is_helped  %> data-student-id=<%= @students[0].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %> ></div>
+  <% @lives0 = @students[0].lives %>
+  <div class="life-remaining" style="background-image:url(/assets/heart-<%= @lives0 %>.png)">
+  </div>
 </div>
 <% end %>
+
 <div class="tables table-2">
 <%= link_to do %>
 <div class="studs student-2" data-can-help=<%= @students[1].can_help? %> data-is-helped=<%= @students[1].is_helped  %> data-student-id=<%= @students[1].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>></div>
+  <% @lives1 = @students[1].lives %>
+  <div class="life-remaining" style="background-image:url(/assets/heart-<%= @lives1 %>.png)">
+  </div>
 </div>
 <% end %>
+
 <div class="tables table-3">
 <%= link_to do %>
 <div class="studs student-3" data-can-help=<%= @students[2].can_help? %> data-is-helped=<%= @students[2].is_helped  %> data-student-id=<%= @students[2].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>></div>
+  <% @lives2 = @students[2].lives %>
+  <div class="life-remaining" style="background-image:url(/assets/heart-<%= @lives2 %>.png)">
+  </div>
 </div>
 <% end %>
+
 <div class="tables table-4">
 <%= link_to do %>
 <div class="studs student-4" data-can-help=<%= @students[3].can_help? %> data-is-helped=<%= @students[3].is_helped  %> data-student-id=<%= @students[3].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>></div>
+  <% @lives3 = @students[3].lives %>
+  <div class="life-remaining" style="background-image:url(/assets/heart-<%= @lives3 %>.png)">
+  </div>
 </div>
 <% end %>
+
 <div class="tables table-5">
 <%= link_to do %>
 <div class="studs student-5" data-can-help=<%= @students[4].can_help? %> data-is-helped=<%= @students[4].is_helped  %> data-student-id=<%= @students[4].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>></div>
+  <% @lives4 = @students[4].lives %>
+  <div class="life-remaining" style="background-image:url(/assets/heart-<%= @lives4 %>.png)">
+  </div>
 </div>
 <% end %>
+
 <div class="tables table-6">
 <%= link_to do %>
 <div class="studs student-6" data-can-help=<%= @students[5].can_help? %> data-is-helped=<%= @students[5].is_helped  %> data-student-id=<%= @students[5].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>></div>
+  <% @lives5 = @students[5].lives %>
+  <div class="life-remaining" style="background-image:url(/assets/heart-<%= @lives5 %>.png)">
+  </div>
 </div>
 <% end %>
+
 <div class="tables table-7">
 <%= link_to do %>
 <div class="studs student-7" data-can-help=<%= @students[6].can_help? %> data-is-helped=<%= @students[6].is_helped  %> data-student-id=<%= @students[6].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>></div>
+  <% @lives6 = @students[6].lives %>
+  <div class="life-remaining" style="background-image:url(/assets/heart-<%= @lives6 %>.png)">
+  </div>
 </div>
 <% end %>
+
 <div class="tables table-8">
 <%= link_to do %>
 <div class="studs student-8" data-can-help=<%= @students[7].can_help? %> data-is-helped=<%= @students[7].is_helped  %> data-student-id=<%= @students[7].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>></div>
+  <% @lives7 = @students[7].lives %>
+  <div class="life-remaining" style="background-image:url(/assets/heart-<%= @lives7 %>.png)">
+  </div>
 </div>
 <% end %>
+
 <div class="tables table-9">
 <%= link_to do %>
 <div class="studs student-9" data-can-help=<%= @students[8].can_help? %> data-is-helped=<%= @students[8].is_helped  %> data-student-id=<%= @students[8].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>></div>
+  <% @lives8 = @students[8].lives %>
+  <div class="life-remaining" style="background-image:url(/assets/heart-<%= @lives8 %>.png)">
+  </div>
 </div>
 <% end %>
+
 <div class="tables table-10">
 <%= link_to do %>
 <div class="studs student-10" data-can-help=<%= @students[9].can_help? %> data-is-helped=<%= @students[9].is_helped  %> data-student-id=<%= @students[9].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>></div>
+  <% @lives9 = @students[9].lives %>
+  <div class="life-remaining" style="background-image:url(/assets/heart-<%= @lives9 %>.png)">
+  </div>
 </div>
 <% end %>
+
 <div class="tables table-11">
 <%= link_to do %>
 <div class="studs student-11" data-can-help=<%= @students[10].can_help? %> data-is-helped=<%= @students[10].is_helped  %> data-student-id=<%= @students[10].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>></div>
+  <% @lives10 = @students[10].lives %>
+  <div class="life-remaining" style="background-image:url(/assets/heart-<%= @lives10 %>.png)">
+  </div>
 </div>
 <% end %>
+
 <div class="tables table-12">
 <%= link_to do %>
 <div class="studs student-12" data-can-help=<%= @students[11].can_help? %> data-is-helped=<%= @students[11].is_helped  %> data-student-id=<%= @students[11].id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>></div>
+  <% @lives11 = @students[11].lives %>
+  <div class="life-remaining" style="background-image:url(/assets/heart-<%= @lives11 %>.png)">
+  </div>
 </div>
 <% end %>
 
