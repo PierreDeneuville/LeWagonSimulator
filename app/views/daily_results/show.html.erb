@@ -1,16 +1,17 @@
 <div class= "container">
 
   <div class="score-table ">
+
     <div class="title">
       <h1> Jour <%= @daily_result.daily_challenge.position %> </h1>
     </div>
 
-    <div class="results">
+    <div class="results orange ">
       <h4>Score de la journée <%= @daily_result.score %> pts</h4>
       <h4>Score total <%= @game.score  %> pts</h4>
     </div>
 
-    <%= link_to 'Jour suivant', game_path(@game), class:'btn btn-success' %>
+    <%= link_to 'Jour suivant', game_path(@game), class:'btn btn-play' %>
 
   </div>
 

@@ -1,5 +1,9 @@
+.container-score {
+  background-color: #0D0221 ;
+}
+
 .score-table {
-  background-color: transparent ;
+  background-color: #261447 ;
   color: white;
   box-shadow: 0 0 10px rgb(248, 248, 250);
   display: flex;
@@ -9,7 +13,7 @@
   height: 90vh;
 }
 
-.score-table h1{
+.score-table h1 {
   font-family: 'Press Start 2P', cursive;
 }
 
@@ -17,14 +21,14 @@
   font-family: 'Press Start 2P', cursive;
 }
 
-// h1,h2,h3 {
-//   font-family: 'Press Start 2P', cursive;
-//   margin: 0 auto 0 auto;
-//   text-align:left;position:relative;
-//   text-shadow: 3px 3px 0px #2038ec;
-//   color:#fff;
-//   font-weight:400;
-// }
+h1,h2,h3 {
+  font-family: 'Press Start 2P', cursive;
+  margin: 0 auto 0 auto;
+  text-align:left;position:relative;
+  text-shadow: 3px 3px 0px #2038ec;
+  color:#fff;
+  font-weight:400;
+}
 
   // h1{font-size:1.7em;width:260px;top:148px;line-height:60px;padding-left:292px;}
 // h2{top:26px;width:150px;font-size:1.6em;z-index:1;}
