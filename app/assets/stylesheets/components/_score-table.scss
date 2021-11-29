@@ -1,0 +1,73 @@
+.score-table {
+  background-color: transparent ;
+  color: white;
+  box-shadow: 0 0 10px rgb(248, 248, 250);
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  height: 90vh;
+}
+
+.score-table h1{
+  font-family: 'Press Start 2P', cursive;
+}
+
+.score-table h3{
+  font-family: 'Press Start 2P', cursive;
+}
+
+// h1,h2,h3 {
+//   font-family: 'Press Start 2P', cursive;
+//   margin: 0 auto 0 auto;
+//   text-align:left;position:relative;
+//   text-shadow: 3px 3px 0px #2038ec;
+//   color:#fff;
+//   font-weight:400;
+// }
+
+  // h1{font-size:1.7em;width:260px;top:148px;line-height:60px;padding-left:292px;}
+// h2{top:26px;width:150px;font-size:1.6em;z-index:1;}
+// h2 a{color:#fff;text-decoration:none;margin-left:375px;width:200px;}h2 a:hover{text-shadow: 3px 3px 0px #d82800;}
+// h3{width:400px;padding-right:300px;font-size:1.5em;}
+
+
+.next-button {
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  border: solid #ffffff 3px;
+  background-color: rgb(15, 138, 15);
+  // box-shadow: 0 0 12px;
+  padding: 30px 30px;
+  font-size: x-large;
+  font-weight: 900;
+  border-radius: 1px;
+  // transition: transform 0.3s ease;
+}
+
+
+.next-button :hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(248, 245, 245, 0.7);
+}
+
+
+// .card-demande {
+//   overflow: hidden;
+//   height: 120px;
+//   background: white;
+//   box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+//   transition: transform 0.3s ease;
+//   display: flex;
+//   align-items: center;
+//   padding: 10px;
+//   margin: 10px 0px;
+// }
+// .card-demande:hover {
+//   transform: scale(1.05);
+//   box-shadow: 0 0 12px rgba(0,0,0,0.3);
+
+// }
+
+// police avec ombre retro
