@@ -10,12 +10,12 @@ const helpStudent = () => {
         buttonHelp.innerHTML = '';
         if(student.dataset.isHelped == 'false' && student.dataset.canHelp == 'true') {
           buttonHelp.insertAdjacentHTML('beforeend',
-            `<a class= 'button-rpg btn-buddy' rel='nofollow' data-method='patch' data-remote="true" href='/games/${student.dataset.gameId}/students/${student.dataset.studentId}?help=student'>help buddy</a>`
+            `<a class= 'button-rpg btn-buddy' rel='nofollow' data-method='patch' data-remote="true" href='/games/${student.dataset.gameId}/students/${student.dataset.studentId}?help=student'>Binome</a>`
           )
         }
         if (student.dataset.teacherHelp == '' && student.dataset.isHelped == 'false' && student.dataset.canHelp == 'true') {
           buttonHelp.insertAdjacentHTML('beforeend',
-            `<a class= 'button-rpg btn-teacher' rel='nofollow' data-method='patch' data-remote="true" href='/games/${student.dataset.gameId}/students/${student.dataset.studentId}?help=teacher'>teacher help</a>`
+            `<a class= 'button-rpg btn-teacher' rel='nofollow' data-method='patch' data-remote="true" href='/games/${student.dataset.gameId}/students/${student.dataset.studentId}?help=teacher'>Prof</a>`
           )
         }
       })
