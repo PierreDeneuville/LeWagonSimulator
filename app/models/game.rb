@@ -108,6 +108,7 @@ class Game < ApplicationRecord
     30 - lives_remain
   end
 
+
   private
 
   def create_buddies(students)

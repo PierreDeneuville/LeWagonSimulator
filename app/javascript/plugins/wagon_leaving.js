@@ -3,6 +3,7 @@ const endGame = document.querySelector('.end-game')
 const wagon = document.querySelector('.le-wagon')
 const students = document.querySelectorAll('.studs')
 // const students = document.querySelectorAll('.student1')
+const lives = document.querySelectorAll('.life-remaining')
 
 
 
@@ -26,6 +27,9 @@ const removeBackground = (student) => {
 }
 let number = 1
 const studentsLeave = () => {
+  lives.forEach((life) => {
+    life.classList.add('no-display')
+  })
   students.forEach((student) => {
     number += 1
     const toTop = 785 - student.getBoundingClientRect().top
