@@ -4,6 +4,7 @@ const wagon = document.querySelector('.le-wagon')
 const students = document.querySelectorAll('.studs')
 // const students = document.querySelectorAll('.student1')
 const lives = document.querySelectorAll('.life-remaining')
+const exercises = document.querySelectorAll('.table-infos')
 
 
 
@@ -29,6 +30,9 @@ let number = 1
 const studentsLeave = () => {
   lives.forEach((life) => {
     life.classList.add('no-display')
+  })
+  exercises.forEach((exercise) => {
+    exercise.classList.add('no-display')
   })
   students.forEach((student) => {
     number += 1

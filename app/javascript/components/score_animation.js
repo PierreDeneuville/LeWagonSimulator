@@ -1,22 +1,23 @@
 const buttonHour = document.querySelector('.add-hour')
-const score = document.querySelector('.score')
 const lives = document.querySelectorAll('.life-remaining')
 const time = document.querySelector('.time')
 const stars = document.querySelectorAll('.star')
 const starFinal = document.querySelector('.star-final')
+const score = document.querySelector('.score')
 let i = 1
 
 const starAnimate = (stars, i) => {
   if(i < 13) {
-    // const toTop = starFinal.getBoundingClientRect().top
-    // const toLeft = starFinal.getBoundingClientRect().left
+    const score = document.querySelector('.score')
+    const toTop = score.getBoundingClientRect().top
+    const toLeft = score.getBoundingClientRect().left + 150
     const life = lives[i - 1]
     const star = stars[i - 1]
     if(parseInt(life.dataset.lives, 10) > 0) {
       star.classList.remove('no-display')
       $(star).animate({
-        left: 155,
-        top: 240
+        left: toLeft,
+        top: toTop
       }, 1500)
     }
 

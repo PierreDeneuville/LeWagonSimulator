@@ -1,4 +1,7 @@
-
+a, a:hover, a:active, a:visited, a:focus {
+    text-decoration:none;
+    color: white;
+}
 .container-show-games {
   display: flex;
   grid-template-columns: 1fr 1fr;
@@ -36,13 +39,13 @@
   background-repeat: no-repeat;
 }
 .time-change {
-  top: 35%;
+  top: 50%;
 }
 .btn-teacher {
-  top: 60%;
+  top: 75%;
 }
 .btn-buddy {
-  top: 50%;
+  top: 65%;
 }
 
 .time {
@@ -54,50 +57,26 @@
   border-radius: 50%;
   width: 45%;
   position: absolute;
-  top: 6%;
+  top: 10%;
   left: 30%;
 }
 
-
-
-// .workspace {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr;
-//   position: relative;
-//   width: 78%;
-//   height: 97vh;
-//   border: 1px solid;
-//   align-items: center;
-//   margin: 10px 0;
-
-// }
-
-// .side-bar {
-//   position: relative;
-//   border: 1px solid;
-//   width: 17%;
-//   margin-left: 20px;
-//   height: 97vh;
-//   margin-top: 10px;
-//   margin-bottom: 10px;
-//   text-align: center;
-// }
-
-
-// .fa-clock {
-//   font-size: 125px;
-// }
-
-// .student1 {
-//   position: relative;
-//   background-size: contain;
-//   width: 30px;
-//   height: 30px;
-//   text-align: center;
-//   top: -28px;
-//   margin-left: 40%;
-//   // display: none;
-// }
+.table-infos {
+  display: flex;
+  position: relative;
+  top: -70px;
+  left: -5px;
+  height: 40px;
+}
+.exercise-infos {
+  color: black;
+  font-family: 'Press Start 2P', cursive;
+  margin-left: 5px;
+  // margin-left: 5px;
+}
+.exercise {
+  width: 40px;
+}
 .table-1 {
   width: 100px;
   height: 85px;
@@ -270,23 +249,35 @@
   top: -125px;
   left: 30px;
 }
-.score {
-  height: 4%;
-  width: 88%;
-  background: white;
-  position: absolute;
-  top: 25%;
+.box-text-interface {
   font-family: 'Press Start 2P', cursive;
   color: black;
   text-align: center;
-  padding: 5px;
-  left: 6%;
+  background: white;
+  position: absolute;
   border-radius: 2px;
   border: 1px solid white;
   box-shadow: 0 1px 0 1px black,
               inset 0 1px 0 1px black,
               0 0 0 1px black,
               inset 0 0 0 1px black;
+}
+.current-day-infos {
+  left: 16%;
+  top: 5%;
+  width: 69%;
+}
+.current-hour-infos {
+  top: 25%;
+  left: 37%;
+  width: 30%;
+}
+.score {
+  height: 4%;
+  width: 88%;
+  top: 35%;
+  padding: 5px;
+  left: 6%;
 }
 .star {
   background-image: url(star.png);
