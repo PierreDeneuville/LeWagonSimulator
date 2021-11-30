@@ -11,6 +11,10 @@
         <%= link_to 'Fin de partie', game_daily_results_path(@game), class: "button-rpg time-change end-game" %>
       <% end %>
 
+
+
+      <%= link_to 'Finir ce jour', game_path(@game, :help => 'skip')  , method: :patch, class: "button-rpg time-change" %>
+
       <div class="button-help">
       </div>
 
