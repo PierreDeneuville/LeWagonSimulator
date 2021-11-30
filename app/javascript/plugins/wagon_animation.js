@@ -4,6 +4,7 @@ const scoreTable = document.querySelector('.score-table')
 const containerIndex = document.querySelector('.container-index')
 const studentsArrive = document.querySelectorAll('.students')
 const lives = document.querySelectorAll('.life-remaining')
+const exercises = document.querySelectorAll('.table-infos')
 let i = 1
 
 const studentAnime = (studentsArrive, i) => {
@@ -39,6 +40,9 @@ const wagonLeave = () => {
   lives.forEach((life) => {
     life.style.display = ''
   })
+  exercises.forEach((exercise) => {
+    exercise.classList.remove('no-display')
+  })
   $(wagon).animate({
     left: 1500
   }, 3000)
@@ -57,6 +61,9 @@ const gameShowAnimate = () => {
         })
         lives.forEach((life) => {
           life.style.display = 'none'
+        })
+        exercises.forEach((exercise) => {
+          exercise.classList.add('no-display')
         })
         wagonArrive()
         setTimeout(function () {

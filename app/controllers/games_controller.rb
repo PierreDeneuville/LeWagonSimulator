@@ -29,6 +29,7 @@ class GamesController < ApplicationController
         redirect_to game_daily_results_path(@game)
       end
     else
+      # raise
       if @game.current_hour < 18
         @last_score = @game.score
         next_hour(@game, students)

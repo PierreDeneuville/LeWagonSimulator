@@ -18,27 +18,29 @@
       <% else %>
         <%= link_to 'PLAY', game_path(current_game), class: "btn-play" %>
       <% end %>
-  <% end %> 
+  <% end %>
   <%# <p class='reflet'>Le Wagon Simulator</p> %>
 </div>
 <div class="le-wagon"></div>
   
 <table class="leader-board">
   <thead>
-    <th><%= "Name" %></th>
-    <th><%= "Batch" %></th>
-    <th><%= "Score" %></th>
+    <tr>
+      <th><%= "Name" %></th>
+      <th><%= "Batch" %></th>
+      <th><%= "Score" %></th>
+    </tr>
   </thead>
-  <tbody class="scroll-leaderboard">
-    <% games = Game.all.order(score: :desc) %>
-    <% games.each do |game| %>
-      <tr>
-        <td><%= game.user.name.capitalize %></td>
-        <td><%= game.user.batch_number %></td>
-        <td><%= game.score %></td>       
-      </tr>  
-    <% end %>
-  </tbody>
+    <tbody class="scroll-leaderboard">
+      <% games = Game.all.order(score: :desc) %>
+      <% games.each do |game| %>
+        <tr>
+          <td><%= game.user.name.capitalize %></td>
+          <td><%= game.user.batch_number %></td>
+          <td><%= game.score %></td>
+        </tr>
+      <% end %>
+    </tbody>
 </table>
 
 
@@ -53,8 +55,6 @@
           <td><%= current_user.games.order(score: :desc).first.score %></td>
         <% end %>
       <% end %>
-    </tr>  
+    </tr>
   </tbody>
 </table>
-
-
