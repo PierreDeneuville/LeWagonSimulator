@@ -1,0 +1,39 @@
+.leader-board {
+  font-family: 'Press Start 2P', cursive;
+  width: 80vh;
+  border: 3px solid #2DE2E6;
+  border-collapse: collapse;
+  margin: 0 auto;
+  box-shadow: 3px 3px 3px 0  #F706CF;
+  margin-bottom: 2rem;
+}
+// .scroll-leaderboard {
+//   overflow-y: scroll;    /* Trigger vertical scroll    */
+//   table-layout: auto;
+//   width: 100%;
+// }
+// .leader-board::-webkit-scrollbar {
+//   display: none;
+// }
+.score_user {
+  width: 80vh;
+  height: 10vh;
+  color: white 
+}
+
+thead tr {
+  background-color: #FF6C11;
+  text-align: left;
+}
+th, td {
+  padding: 15px 20px;
+}
+.best-score {
+  font-size: x-large  ;
+  font-family: 'Press Start 2P', cursive;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  text-shadow: 5px 5px 0px  #F706CF;
+}
+

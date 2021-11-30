@@ -20,8 +20,9 @@
   color: #FF6C11;
   position: relative;
   margin-bottom: 20px;
-  top: -50px;
+  top: -290px;
   font-family: 'Press Start 2P', cursive;
+  text-shadow: 3px 3px 0px #0D0221;
 }
 
 // *,
@@ -133,7 +134,7 @@
 //soleil
 @keyframes pulse {
   to {
-    box-shadow: 0 0 8.5em 0 #FF6C11;
+    box-shadow: 0 0 7.5em 0 #FF6C11;
   }
 }
 .sun {
@@ -145,7 +146,7 @@
   overflow: hidden;
   position: relative;
   box-shadow: 0 0 18em 0 #FF6C11;
-  top: -150px;
+  top: -9px;
   animation: pulse 5s infinite alternate;
 }
 
@@ -194,7 +195,7 @@
 .sun6{
   display: inline-block;
   width: 100%;
-  height: 40px;
+  height: 37px;
   background: linear-gradient(#FF6C11, #fb690e);
   border-radius: 0%;
   position: absolute;
@@ -217,7 +218,3 @@
   transition: 1s linear;
 }
 
-
-.btn-game {
-  margin: 150px
-}
