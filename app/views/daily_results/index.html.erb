@@ -6,7 +6,7 @@
     <div class="results">
       <h4>Score final: <%= @game.score %> pts</h4>
       <h4>Votre rang: <%= @game.player_rank %> </h4>
-      <h4>Vies perdues: <%= @game.lives_lost %></h4>
+      <h4>Vies perdues: <%= @game.lives_lost(@game) %></h4>
       <h4>Gestion des vies: <%= @game.lives_comment %></h4>
     </div>
 
