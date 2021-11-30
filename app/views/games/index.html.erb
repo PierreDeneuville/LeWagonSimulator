@@ -22,3 +22,20 @@
   <%# <p class='reflet'>Le Wagon Simulator</p> %>
 </div>
 <div class="le-wagon"></div>
+
+<div class="leader-board" style='color: white'>
+
+
+
+
+<% games = Game.all.order(score: :desc) %>
+
+<% games.each do |game| %>
+<%= game.user.name %>
+<%= game.user.batch_number %>
+<%= game.score %>
+<br>
+<% end %>
+
+
+</div>

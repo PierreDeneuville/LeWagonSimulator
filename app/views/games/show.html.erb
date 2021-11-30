@@ -18,16 +18,20 @@
         <%= link_to 'Fin de partie', game_path(@game), method: :patch, class: "button-rpg time-change end-game" %>
       <% end %>
 
+
+
+      <%= link_to 'Finir ce jour', game_path(@game, :help => 'skip')  , method: :patch, class: "button-rpg time-change" %>
+
       <div class="button-help">
       </div>
 
   </div>
 
 
-  <div class="time" data-hour=<%= @game.current_hour %>>
-    <%= @game.current_hour %>H
-    <%= @game.daily_challenge.position %>
-  </div>
+    <div class="time" data-hour=<%= @game.current_hour %>>
+      <%= @game.current_hour %>H
+      <%= image_tag("clock/hour-#{@game.current_hour}.png", size: "100x100", alt: "Clock image") %>
+    </div>
 
 
   <div class="game-interface"></div>
