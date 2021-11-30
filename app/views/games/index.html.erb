@@ -25,17 +25,16 @@
 
 <div class="leader-board" style='color: white'>
 
+  <% games = Game.all.order(score: :desc) %>
 
-
-
-<% games = Game.all.order(score: :desc) %>
-
-<% games.each do |game| %>
-<%= game.user.name %>
-<%= game.user.batch_number %>
-<%= game.score %>
-<br>
-<% end %>
-
+  <% games.each do |game| %>
+    <div class="leaderboard-ligne">
+      <%= game.user.name %>
+      <%= game.user.batch_number %>
+      <%= game.score %>
+    </div>
+  <% end %>
+</div>
+<div class="scroe-user">
 
 </div>

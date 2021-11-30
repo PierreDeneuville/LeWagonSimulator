@@ -2,4 +2,8 @@
   width: 80%;
   height: 50%;
   border: 1px solid #2DE2E6;
+  overflow: scroll;
+}
+.leader-board::-webkit-scrollbar {
+  display: none;
 }
