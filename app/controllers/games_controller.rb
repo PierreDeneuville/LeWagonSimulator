@@ -4,7 +4,9 @@ class GamesController < ApplicationController
   end
 
   def show
+    # raise
     @game = Game.find(params[:id])
+    @last_score = params[:last_score].to_i
   end
 
   def create
@@ -15,7 +17,6 @@ class GamesController < ApplicationController
   end
 
   def update
-    # raise
     @game = Game.find(params[:id])
     students = @game.students
     @daily_results = @game.daily_challenge.daily_result
@@ -29,8 +30,9 @@ class GamesController < ApplicationController
       end
     else
       if @game.current_hour < 18
+        @last_score = @game.score
         next_hour(@game, students)
-        redirect_to game_path(@game)
+        redirect_to game_path(@game, last_score: @last_score)
       elsif @game.current_hour == 18 && @game.daily_challenge.position != 20
         next_day(@game, students)
         redirect_to game_daily_result_path(@game, @daily_results)
