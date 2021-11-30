@@ -22,25 +22,23 @@
   <%# <p class='reflet'>Le Wagon Simulator</p> %>
 </div>
 <div class="le-wagon"></div>
-
+  
 <table class="leader-board">
-  <thead>  
-    <tr>
-      <th><%= "Name" %></th>
-      <th><%= "Batch" %></th>
-      <th><%= "Score" %></th>
-    </tr>
+  <thead>
+    <th><%= "Name" %></th>
+    <th><%= "Batch" %></th>
+    <th><%= "Score" %></th>
   </thead>
-    <tbody class="scroll-leaderboard">
-      <% games = Game.all.order(score: :desc) %>
-      <% games.each do |game| %>
-        <tr>
-          <td><%= game.user.name.capitalize %></td>
-          <td><%= game.user.batch_number %></td>
-          <td><%= game.score %></td>       
-        </tr>  
-      <% end %>
-    </tbody>
+  <tbody class="scroll-leaderboard">
+    <% games = Game.all.order(score: :desc) %>
+    <% games.each do |game| %>
+      <tr>
+        <td><%= game.user.name.capitalize %></td>
+        <td><%= game.user.batch_number %></td>
+        <td><%= game.score %></td>       
+      </tr>  
+    <% end %>
+  </tbody>
 </table>
 
 
