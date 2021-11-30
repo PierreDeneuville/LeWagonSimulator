@@ -108,6 +108,7 @@ class Game < ApplicationRecord
     (game.students.count * 3) - lives_remain
   end
 
+
   private
 
   def create_buddies(students)

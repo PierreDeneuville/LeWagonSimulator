@@ -1,0 +1,25 @@
+.container-login {
+    width: 640px; /* Can be in percentage also. */
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+}
+
+.login-pages {
+  font-family: 'Press Start 2P', cursive;
+  align-items: center;
+}
+
+.login-title{
+text-align: center;
+margin: 50px 0px;
+}
+
+.login-form{
+color: white;
+}
+
+.btn-login {
+  color: white;
+}
