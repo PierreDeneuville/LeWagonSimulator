@@ -48,10 +48,10 @@ const gameShowAnimate = () => {
   const container = document.querySelectorAll('.container-show-games')
   const time = document.querySelector('.time');
   if(container && time) {
-    if (time.innerText.includes('9H')) {
+    if (parseInt(time.dataset.hour, 10) == 9) {
       // window.addEventListener('load', (e) => {
       // })
-        console.log('hellooo')
+        // console.log('hellooo')
         studs.forEach((student) => {
           student.classList.add('background-remove')
         })

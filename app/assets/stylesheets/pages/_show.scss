@@ -46,8 +46,16 @@
 }
 
 .time {
-  background-color: rgb(204, 200, 200);
-  justify-content: space-around;
+  background-color: white;
+  font-size: 20px;
+  height: 12%;
+  align-items: center;
+  color: white;
+  border-radius: 50%;
+  width: 45%;
+  position: absolute;
+  top: 6%;
+  left: 30%;
 }
 
 
@@ -75,14 +83,7 @@
 //   text-align: center;
 // }
 
-.time {
-  display: grid;
-  font-size: 20px;
-  height: 30%;
-  margin-top: 20px;
-  align-items: center;
-  color: white;
-}
+
 // .fa-clock {
 //   font-size: 125px;
 // }
