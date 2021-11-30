@@ -4,7 +4,6 @@ class GamesController < ApplicationController
   end
 
   def show
-    # raise
     @game = Game.find(params[:id])
     @last_score = params[:last_score].to_i
   end
@@ -28,6 +27,8 @@ class GamesController < ApplicationController
         finish_game(@game)
         redirect_to game_daily_results_path(@game)
       end
+    elsif params['help'] == 'redirect'
+      redirect_to game_path(@game)
     else
       # raise
       if @game.current_hour < 18
