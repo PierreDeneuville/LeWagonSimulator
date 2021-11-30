@@ -23,24 +23,40 @@
 </div>
 <div class="le-wagon"></div>
 
-<div class="leader-board" style='color: white'>
+<table class="leader-board">
+  <thead>  
+    <tr>
+      <th><%= "Name" %></th>
+      <th><%= "Batch" %></th>
+      <th><%= "Score" %></th>
+    </tr>
+  </thead>
+    <tbody class="scroll-leaderboard">
+      <% games = Game.all.order(score: :desc) %>
+      <% games.each do |game| %>
+        <tr>
+          <td><%= game.user.name.capitalize %></td>
+          <td><%= game.user.batch_number %></td>
+          <td><%= game.score %></td>       
+        </tr>  
+      <% end %>
+    </tbody>
+</table>
 
 
-  <% games = Game.all.order(score: :desc) %>
-  <% games.each do |game| %>
-    <div class="leaderboard-ligne">
-      <%= game.user.name %>
-      <%= game.user.batch_number %>
-      <%= game.score %>
-    </div>
-  <% end %>
-</div>  
-<div class='score-user'>
-<% if current_user %>
-  <% current_user.name %>
-  <% current_user.batch_number %>
-  <% current_user.games %>
-  <% end %>
-</div>
+<p class= 'best-score'><%="Your Best Score" %></p>
+<table class='leader-board' >
+  <tbody>
+    <tr>
+      <% if current_user %>
+        <% if current_user.games.present? %>
+          <td><%= current_user.name.capitalize %></td>
+          <td><%= current_user.batch_number %></td>
+          <td><%= current_user.games.order(score: :desc).first.score %></td>
+        <% end %>
+      <% end %>
+    </tr>  
+  </tbody>
+</table>
 
 
