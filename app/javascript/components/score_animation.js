@@ -45,9 +45,11 @@ const scoreImplement = (object, start, end, duration) => {
     }
   }, 100);
 }
+
 const scoreAnimation = () => {
   if(buttonHour) {
-    if(time.dataset.hour > 8 && time.dataset.hour < 18 && score.dataset.lastScore > 0) {
+    const scoreMarked = score.dataset.gameScore - score.dataset.lastScore
+    if(time.dataset.hour > 9 && scoreMarked > 0) {
       setTimeout(function () {
         starAnimate(stars, i);
       }, 500)
