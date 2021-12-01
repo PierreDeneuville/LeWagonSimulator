@@ -9,7 +9,7 @@
       <h4>Gestion des vies: <%= @game.lives_comment %></h4>
     </div>
 
-    <%= link_to 'Voir mon classement', root_path, class:'btn-game' %>
+    <%= link_to 'Classement', root_path(anchor: 'leaderboard'), class:'btn-game' %>
 
   </div>
 </div>
