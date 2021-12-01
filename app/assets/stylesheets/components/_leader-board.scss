@@ -1,12 +1,13 @@
-.leader-board {
+.leader-board { 
   font-family: 'Press Start 2P', cursive;
-  width: 80vh;
+  width: 65%;
   border: 3px solid #2DE2E6;
   border-collapse: collapse;
   margin: 0 auto;
   box-shadow: 3px 3px 3px 0  #F706CF;
   margin-bottom: 2rem;
 }
+
 // .scroll-leaderboard {
 //   overflow-y: scroll;    /* Trigger vertical scroll    */
 //   table-layout: auto;
@@ -16,7 +17,7 @@
 //   display: none;
 // }
 .score_user {
-  width: 80vh;
+  width: 80vw;
   height: 10vh;
   color: white 
 }
@@ -26,7 +27,7 @@ thead tr {
   text-align: left;
 }
 th, td {
-  padding: 15px 20px;
+  padding: 15px 100px;
 }
 .best-score {
   font-size: x-large  ;

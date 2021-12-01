@@ -5,7 +5,7 @@ a, a:hover, a:active, a:visited, a:focus {
 .container-show-games {
   display: flex;
   grid-template-columns: 1fr 1fr;
-  min-width: 100vh;
+  min-width: 100vw;
   min-height: 100vh;
   grid-gap: 26px;
   position: relative;

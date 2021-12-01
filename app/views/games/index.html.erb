@@ -22,10 +22,11 @@
   <%# <p class='reflet'>Le Wagon Simulator</p> %>
 </div>
 <div class="le-wagon"></div>
-
+  
 <table class="leader-board">
   <thead>
     <tr>
+      <th><%= "Rang" %></th>
       <th><%= "Name" %></th>
       <th><%= "Batch" %></th>
       <th><%= "Score" %></th>
@@ -35,6 +36,7 @@
       <% games = Game.all.order(score: :desc) %>
       <% games.each do |game| %>
         <tr>
+          <td><%= games.index(game) + 1 %></td>
           <td><%= game.user.name.capitalize %></td>
           <td><%= game.user.batch_number %></td>
           <td><%= game.score %></td>
@@ -44,17 +46,20 @@
 </table>
 
 
-<p class= 'best-score'><%="Your Best Score" %></p>
-<table class='leader-board' >
-  <tbody>
-    <tr>
-      <% if current_user %>
-        <% if current_user.games.present? %>
-          <td><%= current_user.name.capitalize %></td>
-          <td><%= current_user.batch_number %></td>
-          <td><%= current_user.games.order(score: :desc).first.score %></td>
-        <% end %>
-      <% end %>
-    </tr>
-  </tbody>
-</table>
+<% if current_user %>
+  <p class= 'best-score'>Your Best Score</p>
+  <table class='leader-board' >
+    <tbody>
+      <tr>
+        <% games = Game.all.order(score: :desc) %> 
+        <% user_best_game = current_user.games.order(score: :desc).first %>
+          <% if current_user.games.present? %>
+            <td><%= games.index(user_best_game) + 1 %></td>
+            <td><%= current_user.name.capitalize %></td>
+            <td><%= current_user.batch_number %></td>
+            <td><%= user_best_game.score %></td>
+          <% end %>
+<% end %>
+      </tr>
+    </tbody>
+  </table>
