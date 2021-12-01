@@ -10,7 +10,10 @@
       <h4>Score total <%= @game.score  %> pts</h4>
     </div>
 
-    <%= link_to 'Jour suivant', game_path(@game, help: 'redirect'), method: :patch, class:'btn-game' %>
+      <div class="buttons-daily-results">
+        <%= link_to 'Jour suivant', game_path(@game), class:'btn-game btn-change-show' %>
+        <%= link_to 'Classement', root_path(anchor: 'leaderboard'), class: 'btn-game btn-to-leaderboard' %>
+      </div>
 
   </div>
 
