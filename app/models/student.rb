@@ -46,7 +46,7 @@ class Student < ApplicationRecord
 
   def update_exercise(student)
     god_number = rand(1..100)
-    daily_result = student.game.daily_challenge.daily_result
+    daily_result = DailyResult.where(game: student.game).find_by(daily_challenge: student.game.daily_challenge)
     if god_number <= student.success_probability && student.exercise.position == 6
       # new_position_exercise = student.exercise.position + 1
       # next_exercise = student.game.daily_challenge.exercises.find_by(position: new_position_exercise)
