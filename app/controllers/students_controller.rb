@@ -1,6 +1,5 @@
 class StudentsController < ApplicationController
   def update
-    # raise
     @student = Student.find(params[:id])
     helping_student = @student.current_buddy
     @student.is_helped = true
@@ -11,11 +10,12 @@ class StudentsController < ApplicationController
       @student.success_probability += 40
     else
       @student.success_probability += 20
-      helping_student.success_probability = 0
+      helping_student.success_probability = 0 unless helping_student.success_probability > 1000
     end
     @student.save
     helping_student.save
     @game = @student.game
-    redirect_to game_path(@game)
+    @last_score = @game.score
+    redirect_to game_path(@game, last_score: @last_score)
   end
 end

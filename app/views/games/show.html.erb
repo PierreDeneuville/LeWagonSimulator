@@ -11,7 +11,7 @@
     </div>
 
     <div class="score box-text-interface" data-game-score=<%= @game.score %> data-last-score=<%= @last_score %>>
-      <% if @game.current_hour == 9 || @last_score == 0 %>
+      <% if @game.current_hour == 9 || @game.current_hour == 18 %>
         Score: <%= @game.score %>
       <% else %>
         Score: <%= @last_score %>
@@ -57,14 +57,14 @@
         <%= image_tag('exo-red.png', class: 'exercise') %>
       <% elsif student.exercise.position == 3 %>
         <%= image_tag('exo-orange.png', class: 'exercise') %>
+      <% elsif student.success_probability > 1000 %>
+        <%= image_tag('exo-gold.png', class: 'exercise') %>
       <% elsif student.exercise.position > 3 && student.success_probability >= 0 %>
         <%= image_tag('exo-green.png', class: 'exercise') %>
-      <% elsif student.success_probability < 0 %>
-        <%= image_tag('exo-gold.png', class: 'exercise') %>
       <% end %>
       <div class="exercise-infos">
         <p><%= student.exercise.position %>/6</p>
-        <% if student.success_probability >= 0 %>
+        <% if student.success_probability <= 200 && student.success_probability >= 0 %>
           <p><%= student.success_probability %>%</p>
         <% end %>
       </div>
