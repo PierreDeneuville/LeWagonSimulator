@@ -13,7 +13,7 @@ a, a:hover, a:active, a:visited, a:focus {
   background-repeat: no-repeat;
 }
 .interface-actions {
-  background-image: url(interface-actions.png);
+  background-image: asset-url('interface-actions.png');
   width: 220px;
   height: 835px;
   position: absolute;
@@ -25,12 +25,12 @@ a, a:hover, a:active, a:visited, a:focus {
   position: absolute;
   top: 0px;
   left: 284px;
-  background-image: url(game-interface.png);
+  background-image: asset-url('game-interface.png');
 }
 .button-rpg {
   width: 100%;
   height: 7%;
-  background-image: url(button.PNG);
+  background-image: asset-url('button.png');
   position: absolute;
   padding: 10px;
   font-family: 'Press Start 2P', cursive;
@@ -165,41 +165,83 @@ a, a:hover, a:active, a:visited, a:focus {
   left: 1001px;
 }
 .student-1 {
-  background-image: url(charac1Face.png);
+  background-image: asset-url('charac1Face.png');
 }
 .student-2 {
-  background-image: url(charac2Face.png);
+  background-image: asset-url('charac2Face.png');
 }
 .student-3 {
-  background-image: url(charac3Face.png);
+  background-image: asset-url('charac3Face.png');
 }
 .student-4 {
-  background-image: url(charac4Face.png);
+  background-image: asset-url('charac4Face.png');
 }
 .student-5 {
-  background-image: url(charac5Face.png);
+  background-image: asset-url('charac5Face.png');
 }
 .student-6 {
-  background-image: url(charac6Face.png);
+  background-image: asset-url('charac6Face.png');
 }
 .student-7 {
-  background-image: url(charac7Face.png);
+  background-image: asset-url('charac7Face.png');
 }
 .student-8 {
-  background-image: url(charac8Face.png);
+  background-image: asset-url('charac8Face.png');
 }
 .student-9 {
-  background-image: url(charac9Face.png);
+  background-image: asset-url('charac9Face.png');
 }
 .student-10 {
-  background-image: url(charac10Face.png);
+  background-image: asset-url('charac10Face.png');
 }
 .student-11 {
-  background-image: url(charac11Face.png);
+  background-image: asset-url('charac11Face.png');
 }
 .student-12 {
-  background-image: url(charac12Face.png);
+  background-image: asset-url('charac12Face.png');
 }
+
+
+.students1 {
+  background-image: asset-url('charac1Face.png');
+}
+.students2 {
+  background-image: asset-url('charac2Face.png');
+}
+.students3 {
+  background-image: asset-url('charac3Face.png');
+}
+.students4 {
+  background-image: asset-url('charac4Face.png');
+}
+.students5 {
+  background-image: asset-url('charac5Face.png');
+}
+.students6 {
+  background-image: asset-url('charac6Face.png');
+}
+.students7 {
+  background-image: asset-url('charac7Face.png');
+}
+.students8 {
+  background-image: asset-url('charac8Face.png');
+}
+.students9 {
+  background-image: asset-url('charac9Face.png');
+}
+.students10 {
+  background-image: asset-url('charac10Face.png');
+}
+.students11 {
+  background-image: asset-url('charac11Face.png');
+}
+.students12 {
+  background-image: asset-url('charac12Face.png');
+}
+
+
+
+
 .studs{
   position: relative;
   top: -50px;
@@ -209,7 +251,7 @@ a, a:hover, a:active, a:visited, a:focus {
 }
 
 .le-wagon {
-  background-image: url(wagon.png);
+  background-image: asset-url(wagon);
   background-size: cover;
   width: 110px;
   height: 100px;
@@ -235,7 +277,7 @@ a, a:hover, a:active, a:visited, a:focus {
 }
 
 .main-character {
-  background-image: url(charac0Face.png);
+  background-image: asset-url('charac0Face.png');
   top: 122px;
   left: 804px;
 }
@@ -283,7 +325,7 @@ a, a:hover, a:active, a:visited, a:focus {
   left: 6%;
 }
 .star {
-  background-image: url(star.png);
+  background-image: asset-url('star.png');
   width: 25px;
   height: 25px;
   position: absolute;
