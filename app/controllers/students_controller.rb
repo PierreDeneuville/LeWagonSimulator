@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
   def update
+    # raise
     @student = Student.find(params[:id])
     helping_student = @student.current_buddy
     @student.is_helped = true

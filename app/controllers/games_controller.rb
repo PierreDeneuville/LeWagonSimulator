@@ -30,7 +30,6 @@ class GamesController < ApplicationController
     elsif params['help'] == 'redirect'
       redirect_to game_path(@game)
     else
-      # raise
       if @game.current_hour < 18
         @last_score = @game.score
         next_hour(@game, students)

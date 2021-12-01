@@ -11,7 +11,7 @@
     </div>
 
     <div class="score box-text-interface" data-game-score=<%= @game.score %> data-last-score=<%= @last_score %>>
-      <% if @game.current_hour == 9 %>
+      <% if @game.current_hour == 9 || @last_score == 0 %>
         Score: <%= @game.score %>
       <% else %>
         Score: <%= @last_score %>
