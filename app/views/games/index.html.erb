@@ -22,8 +22,8 @@
   <%# <p class='reflet'>Le Wagon Simulator</p> %>
 </div>
 <div class="le-wagon"></div>
-  
-<table class="leader-board">
+
+<table class="leader-board" id='leaderboard'>
   <thead>
     <tr>
       <th><%= "Rang" %></th>
@@ -51,7 +51,7 @@
   <table class='leader-board' >
     <tbody>
       <tr>
-        <% games = Game.all.order(score: :desc) %> 
+        <% games = Game.all.order(score: :desc) %>
         <% user_best_game = current_user.games.order(score: :desc).first %>
           <% if current_user.games.present? %>
             <td><%= games.index(user_best_game) + 1 %></td>
