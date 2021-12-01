@@ -48,7 +48,9 @@
   <div class="tables table-<%= @game.students.order(classroom_position: :asc).index(student) + 1 %>">
     <%= link_to do %>
       <div class="studs student-<%= @game.students.order(classroom_position: :asc).index(student) + 1  %>" data-can-help=<%= student.can_help %> data-position=<%= student.classroom_position %> data-is-helped=<%= student.is_helped %> data-student-id=<%= student.id %> data-game-id=<%= @game.id %> data-teacher-help=<%= @game.students.find_by(teacher_help: true) %>></div>
-      <div class="life-remaining" style="background-image:url('/assets/heart-<%= student.lives %>.png')" data-lives=<%= student.lives %>></div>
+      <div class="life-remaining"  data-lives=<%= student.lives %>>
+        <%= image_tag ("heart-#{student.lives}") %>
+      </div>
     <% end %>
     <div class="table-infos">
       <% if student.exercise.position < 3 %>
