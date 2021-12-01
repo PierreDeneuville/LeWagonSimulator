@@ -52,7 +52,7 @@ class Student < ApplicationRecord
       # next_exercise = student.game.daily_challenge.exercises.find_by(position: new_position_exercise)
       # student.exercise = next_exercise
       # student.success_probability = student.exercise.success_probability
-      student.success_probability = -100
+      student.success_probability = 1500
       daily_result.score += student.lives * (student.exercise.position + 1)
       daily_result.save
       student.game.score += student.lives * (student.exercise.position + 1)
