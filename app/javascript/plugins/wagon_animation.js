@@ -10,7 +10,7 @@ let i = 1
 const studentAnime = (studentsArrive, i) => {
   if (i <= studentsArrive.length) {
     const student = studentsArrive[i - 1]
-    student.style.backgroundImage = `url(/assets/charac${i}Face.png)`
+    // student.style.backgroundImage = `asset-url(charac${i}Face)`
     const final = studs[i - 1]
     const toTop = final.getBoundingClientRect().top
     const toLeft = final.getBoundingClientRect().left

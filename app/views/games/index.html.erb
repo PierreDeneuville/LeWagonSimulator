@@ -16,7 +16,7 @@
       <% if current_user.games.empty? || current_game.nil? %>
         <%= link_to "PLAY", games_path, method: :post, class: "btn-play" %>
       <% else %>
-        <%= link_to 'PLAY', game_path(current_game), class: "btn-play" %>
+        <%= link_to 'PLAY', game_path(current_game, help: 'redirect'), method: :patch, class: "btn-play" %>
       <% end %>
   <% end %>
   <%# <p class='reflet'>Le Wagon Simulator</p> %>
