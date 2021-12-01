@@ -1,6 +1,5 @@
 class StudentsController < ApplicationController
   def update
-    # raise
     @student = Student.find(params[:id])
     helping_student = @student.current_buddy
     @student.is_helped = true
@@ -16,6 +15,7 @@ class StudentsController < ApplicationController
     @student.save
     helping_student.save
     @game = @student.game
-    redirect_to game_path(@game)
+    @last_score = @game.score
+    redirect_to game_path(@game, last_score: @last_score)
   end
 end
