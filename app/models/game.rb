@@ -70,7 +70,7 @@ class Game < ApplicationRecord
     when 501..1000
       "Petit bras, petit chocolats ⭐⭐⭐"
     when 1001..1500
-      "Bien joué ⭐⭐⭐⭐"
+      "Gros respect ⭐⭐⭐⭐"
     when 1501..2500
       "Un vrai cheminot! ⭐⭐⭐⭐⭐"
     when 2501..6000
@@ -91,7 +91,7 @@ class Game < ApplicationRecord
     when 11..15
       "Chic type 😇"
     when 16..20
-      "Teacher bisounours 🤡"
+      "Roi des bisounours 🤡"
     when 21..30
       "Eleveur de licornes 🦄"
     end
