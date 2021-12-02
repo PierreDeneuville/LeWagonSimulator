@@ -29,9 +29,13 @@
       <% elsif @game.current_hour == 18 && @game.daily_challenge.position == 20 %>
         <%= link_to 'Fin de partie', game_path(@game), method: :patch, class: "button-rpg time-change end-game" %>
       <% end %>
-
+      <% student_helped = @game.students.find_by(teacher_help: true) %>
+      <% helped_position = student_helped.classroom_position if student_helped != nil %>
       <div class="button-help">
+        <a class= 'button-rpg btn-buddy disabled' href=''>Binome</a>
+        <a class= 'button-rpg btn-teacher disabled' href=''>Prof</a>
       </div>
+      <div class="mini-character prof" data-prof-helping=<%= helped_position %>></div>
 
       <%= link_to 'Skip Day', game_path(@game, help: 'skip'), method: :patch, class: "button-rpg skip-day" %>
 
