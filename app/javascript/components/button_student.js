@@ -14,6 +14,10 @@ const helpStudent = () => {
       student.addEventListener('click', (e) => {
         e.preventDefault();
         buttonHelp.innerHTML = '';
+        students.forEach((student) => {
+          student.classList.remove("picked");
+        })
+        student.classList.add("picked");
         if(student.dataset.isHelped == 'false' && student.dataset.canHelp == 'true') {
           buttonHelp.insertAdjacentHTML('beforeend',
             `<a class= 'button-rpg btn-buddy'  data-remote="true" rel='nofollow' data-method='patch' href='/games/${student.dataset.gameId}/students/${student.dataset.studentId}?help=student'>Binome</a>`
