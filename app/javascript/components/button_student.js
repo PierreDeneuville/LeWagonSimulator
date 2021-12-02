@@ -8,8 +8,7 @@ const helpStudent = () => {
     if (miniCharacter.dataset.profHelping !== '') {
       miniCharacter.innerHTML = ''
       const image = parseInt(miniCharacter.dataset.profHelping, 10)
-      miniCharacter.insertAdjacentHTML('beforeend',
-      `<img src="/assets/charac${image}Face.png" alt="mini character">`)
+      miniCharacter.classList.add(`mini-charac-${image}`)
       teacherAnimate();
     }
     const students = document.querySelectorAll('.studs');
