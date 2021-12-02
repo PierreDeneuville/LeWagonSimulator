@@ -37,7 +37,7 @@
       </div>
       <div class="mini-character prof" data-prof-helping=<%= helped_position %>></div>
 
-      <%= link_to 'Skip Day', game_path(@game, help: 'skip'), method: :patch, class: "button-rpg skip-day" %>
+      <%= link_to 'Passer la journée', game_path(@game, help: 'skip'), method: :patch, class: "button-rpg skip-day" %>
 
   </div>
 
@@ -70,8 +70,10 @@
       <% end %>
       <div class="exercise-infos">
         <p><%= student.exercise.position %>/6</p>
-        <% if student.success_probability <= 200 && student.success_probability >= 0 %>
+        <% if student.success_probability <= 100 && student.success_probability >= 0 %>
           <p><%= student.success_probability %>%</p>
+        <% elsif student.success_probability > 100 && student.success_probability < 200 %>
+          <p class="percentage">100%</p>
         <% end %>
       </div>
     </div>

@@ -236,7 +236,10 @@ a, a:hover, a:active, a:visited, a:focus {
 .mini-charac-12 {
   background-image: asset-url('charac12Face.png');
 }
-
+.percentage {
+  position: relative;
+  left: -15px;
+}
 
 .students1 {
   background-image: asset-url('charac1Face.png');
