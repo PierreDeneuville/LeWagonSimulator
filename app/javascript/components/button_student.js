@@ -1,3 +1,5 @@
+import { teacherAnimate } from '../plugins/teacher_animations'
+
 const helpStudent = () => {
   const buttonHelp = document.querySelector('.button-help')
   const container = document.querySelector('.container-show-games');
@@ -7,7 +9,8 @@ const helpStudent = () => {
       miniCharacter.innerHTML = ''
       const image = parseInt(miniCharacter.dataset.profHelping, 10)
       miniCharacter.insertAdjacentHTML('beforeend',
-        `<img src="/assets/charac${image}Face.png" alt="mini character">`)
+      `<img src="/assets/charac${image}Face.png" alt="mini character">`)
+      teacherAnimate();
     }
     const students = document.querySelectorAll('.studs');
     students.forEach((student) => {
