@@ -7,6 +7,10 @@ const lives = document.querySelectorAll('.life-remaining')
 const exercises = document.querySelectorAll('.table-infos')
 let i = 1
 
+const playBusAudio = () => {
+  const busAudio = new Audio('/assets/son-van.mp3')
+  busAudio.play();
+}
 const studentAnime = (studentsArrive, i) => {
   if (i <= studentsArrive.length) {
     const student = studentsArrive[i - 1]
@@ -66,6 +70,7 @@ const gameShowAnimate = () => {
           exercise.classList.add('no-display')
         })
         wagonArrive()
+        setTimeout(playBusAudio, 3000)
         setTimeout(function () {
           studentAnime(studentsArrive, i);
         }, 3500)
