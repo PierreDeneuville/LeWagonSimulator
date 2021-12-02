@@ -3,7 +3,8 @@
     <h1> Fin de partie </h1>
 
     <div class="results">
-      <h4>Score final: <%= @game.score %> pts, <%= @game.player_rank %></h4>
+      <h4>Score final: <%= @game.score %> pts</h4>
+      <h4><%= @game.player_rank %></h4>
       <h4>Votre rang: <%= Game.all.order(score: :desc).index(@game) + 1 %>e</h4>
       <h4>Vies perdues: <%= @game.lives_lost(@game) %></h4>
       <h4>Gestion des vies: <%= @game.lives_comment %></h4>
