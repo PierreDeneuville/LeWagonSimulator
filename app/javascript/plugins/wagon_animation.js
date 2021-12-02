@@ -7,6 +7,11 @@ const lives = document.querySelectorAll('.life-remaining')
 const exercises = document.querySelectorAll('.table-infos')
 let i = 1
 
+// const playFlute = () => {
+//   const flute = new Audio('/assets/flut.wav')
+//   flute.play()
+// }
+
 const playBusAudio = () => {
   const busAudio = new Audio('/assets/son-van.mp3')
   busAudio.play();
