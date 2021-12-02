@@ -64,17 +64,17 @@ class Game < ApplicationRecord
     when 0
       "On ne peux plus rien pour toi 😓"
     when 1..300
-      "Tu ne t'es pas foulé 😕"
+      "Tu ne t'es pas foulé ⭐"
     when 301..500
-      "Pas mal, mais pas top non plus 🤭"
+      "Pas mal, mais pas top non plus ⭐⭐"
     when 501..1000
-      "Petit bras, petit chocolats 😌"
-    when 1001..5000
-      "Bien joué 😉"
-    when 5001..10_000
-      "Bonhomme! 😎"
-    when 10_001..50_000
-      "Dieu du Wagon 🤑"
+      "Petit bras, petit chocolats ⭐⭐⭐"
+    when 1001..1500
+      "Bien joué ⭐⭐⭐⭐"
+    when 1501..2500
+      "Un vrai cheminot! ⭐⭐⭐⭐⭐"
+    when 2501..6000
+      "Dieu du Wagon 🌟🌟🌟🌟🌟"
     else
       "Ce score est douteux, tu as triché 🤪"
     end
@@ -83,15 +83,17 @@ class Game < ApplicationRecord
   def lives_comment
     case lives_remain
     when 0
-      "Claqué au sol 💩"
+      "Claquée au sol 💩"
     when 1..5
       "Roi du burnout 😈"
-    when 6..15
+    when 6..10
       "Le boucher du wagon 😱"
-    when 16..25
+    when 11..15
+      "Chic type 😇"
+    when 16..20
       "Teacher bisounours 🤡"
-    when 26..30
-      "Roi des licornes 🦄"
+    when 21..30
+      "Eleveur de licornes 🦄"
     end
   end
 
@@ -107,7 +109,6 @@ class Game < ApplicationRecord
   def lives_lost(game)
     (game.students.count * 3) - lives_remain
   end
-
 
   private
 
