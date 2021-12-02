@@ -28,6 +28,7 @@ import { helpStudent } from '../components/button_student'
 import { gameShowAnimate } from '../plugins/wagon_animation'
 import {  animationLeaving } from '../plugins/wagon_leaving'
 import { scoreAnimation } from '../components/score_animation'
+import { teacherAnimate } from '../plugins/teacher_animations'
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -38,4 +39,5 @@ document.addEventListener('turbolinks:load', () => {
   animationLeaving();
   gameShowAnimate();
   scoreAnimation();
+  teacherAnimate();
 });

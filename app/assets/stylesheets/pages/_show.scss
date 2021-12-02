@@ -386,3 +386,17 @@ a, a:hover, a:active, a:visited, a:focus {
   top: 52%;
   left: 71.5%;
 }
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.5;
+}
+.mini-character {
+  height: 50px;
+  width: 35px;
+  position: absolute;
+  left: 80%;
+}
+.prof {
+  top: 75.5%;
+}
