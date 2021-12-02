@@ -7,6 +7,19 @@ const lives = document.querySelectorAll('.life-remaining')
 const exercises = document.querySelectorAll('.table-infos')
 let i = 1
 
+// const crowd = () => {
+//   const yieldStudent = new Audio('/assets/yield.mp3')
+//   yieldStudent.play()
+// }
+// const footStep = () => {
+//   const step = new Audio('/assets/footstep.mp3')
+//   step.play()
+// }
+
+// const playBusAudio = () => {
+//   const busAudio = new Audio('/assets/son-van.mp3')
+//   busAudio.play();
+// }
 const studentAnime = (studentsArrive, i) => {
   if (i <= studentsArrive.length) {
     const student = studentsArrive[i - 1]
@@ -25,7 +38,7 @@ const studentAnime = (studentsArrive, i) => {
     studentAnime(studentsArrive, i)
 
   }
-
+  
 }
 
 const wagonArrive = () => {
@@ -66,6 +79,9 @@ const gameShowAnimate = () => {
           exercise.classList.add('no-display')
         })
         wagonArrive()
+        // setTimeout(crowd, 3000)
+        // setTimeout(playBusAudio, 3000)
+        // setTimeout(footStep, 3000)
         setTimeout(function () {
           studentAnime(studentsArrive, i);
         }, 3500)

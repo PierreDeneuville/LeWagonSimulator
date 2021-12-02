@@ -41,3 +41,4 @@ document.addEventListener('turbolinks:load', () => {
   scoreAnimation();
   // teacherAnimate();
 });
+
